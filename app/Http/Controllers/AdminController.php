@@ -38,7 +38,7 @@ class AdminController extends Controller
             $bid = new Bid();
 
 
-            return view('admin.edit');
+            return view('admin.edit')->with(compact('bid'));
     }
 
     /**
@@ -72,7 +72,7 @@ class AdminController extends Controller
         $bid->save();
 
 
-        return 'ok';
+        return redirect()->route('adminRoute');
     }
 
 

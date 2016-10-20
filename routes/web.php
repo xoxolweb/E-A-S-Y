@@ -24,7 +24,9 @@ Auth::routes();
 //admin
 Route::group(['prefix'=>'admin'],function(){
     Route::post('/add','AdminController@add');
+    Route::get('/edit','AdminController@edit')->name('adminEdit');
     Route::get('/', 'AdminController@index')->name('adminRoute');
+
     Route::get('/logout',function(){
         Auth::logout();
         return redirect()->route('main');

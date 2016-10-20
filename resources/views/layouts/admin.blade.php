@@ -10,6 +10,8 @@
     <link rel="stylesheet" href=" /public/css/fonts.css">
     <link rel="stylesheet" href=" /public/css/style.css">
     <link rel="stylesheet" href=" /public/css/media.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script src=" /public/libs/jquery-2.2.4.min.js"></script>
     <script src=" /public/libs/slick.min.js"></script>
@@ -39,7 +41,7 @@
             </div>
             <nav>
                 <a href="/admin">Добавить</a>
-                <a href="/edit">Редактировать</a>
+                <a href="{{ route('adminEdit') }}">Редактировать</a>
 
                 <a href="{{ route('logout') }}"><b>Выйти</b></a>
             </nav>
