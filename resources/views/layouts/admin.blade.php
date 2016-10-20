@@ -37,15 +37,12 @@
                     <p>Позвонить</p>
                 </a>
             </div>
-            <div class="nav">
-                <a href="#">555</a>
             <nav>
-                <a href="#">Арендовать</a>
-                <a href="#">Здать</a>
-                <a href="#">Ваш отзыв</a>
-                <a href="#">Контакты</a>
+                <a href="/admin">Добавить</a>
+                <a href="/edit">Редактировать</a>
+
+                <a href="{{ route('logout') }}"><b>Выйти</b></a>
             </nav>
-            </div>
         </div>
     </div>
 </header>

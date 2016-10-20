@@ -99,8 +99,11 @@ h3{
   justify-content: space-between;
   height: 80px;
 }
-nav, .call_back, .logo{
+.nav, .call_back, .logo{
   align-self: center;
+}
+.nav>a{
+    display: none;
 }
 nav a{
     font: normal 14px/17px "MyriadPro",sans-serif;

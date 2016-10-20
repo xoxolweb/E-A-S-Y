@@ -33,11 +33,12 @@ class AdminController extends Controller
      * or
      * @return void
      */
-    public function edit($id){
+    public function edit($id = null){
 
             $bid = new Bid();
 
 
+            return view('admin.edit');
     }
 
     /**

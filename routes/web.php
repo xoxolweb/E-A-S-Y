@@ -11,6 +11,7 @@
 |
 */
 
+
 use Illuminate\Support\Facades\Auth;
 
 /*Route::get('/', function () {
@@ -24,7 +25,10 @@ Auth::routes();
 Route::group(['prefix'=>'admin'],function(){
     Route::post('/add','AdminController@add');
     Route::get('/', 'AdminController@index')->name('adminRoute');
-
+    Route::get('/logout',function(){
+        Auth::logout();
+        return redirect()->route('main');
+    })->name('logout');
 });
 //site
 Route::group(['prefix'=>'{category}'],function(){

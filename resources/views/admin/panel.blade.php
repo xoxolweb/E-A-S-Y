@@ -1,12 +1,16 @@
-@extends('layouts.app');
+@extends('layouts.admin')
 
 @section('content')
+
 <style>
-    label{
-        display: block;
-    }
+    /*label{*/
+        /*display: block;*/
+    /*}*/
 </style>
- <form action="admin/add" method="post" class="container">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<form action="admin/add" method="post" class="container">
         <div class="row">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
