@@ -2,3 +2,52 @@
 @media only screen and (max-width: 1366px) {
 
 }
+
+@media only screen and (max-width: 1200px) {
+  .contain{
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .element_slide>div {
+    margin-left: 10px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  /*header*/
+  .call_back a{
+    height: 60px;
+    width: 140px;
+  }
+  .call_back>a p:first-child{
+    display: none;
+  }
+  .call_back i{
+    font-size: 30px;
+    margin-top: 5px;
+  }
+  .call_back>a p:last-child{
+    display: block;
+    line-height: 58px;
+    padding-left: 20px;
+    font-size: 18px;
+  }
+  nav{
+    display: none;
+  }
+  .bot_header .contain{
+    height: 110px;
+  }
+  .nav>a{
+    display: flex;
+  }
+
+}
+@media only screen and (max-width: 1366px) {
+
+}
+@media only screen and (max-width: 1366px) {
+
+}
+@media only screen and (max-width: 1366px) {
+
+}

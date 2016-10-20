@@ -10,3 +10,11 @@ $('.wraper_slider').slick({
   autoplay: true,
   speed: 500
 });
+$('.users_block').slick({
+  infinite: true,
+  autoplay: true,
+  speed: 500
+});
+
+$('.slick-slider .slick-next').text('>');
+$('.slick-slider .slick-prev').text('<');

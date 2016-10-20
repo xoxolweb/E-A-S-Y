@@ -22,6 +22,7 @@ h3{
 .top_header .contain{
   display: flex;
   justify-content: flex-end;
+  background-color: #111;
 }
 .social{
   display: flex;
@@ -99,8 +100,20 @@ h3{
   justify-content: space-between;
   height: 80px;
 }
-nav, .call_back, .logo{
+.nav, .call_back, .logo{
   align-self: center;
+}
+.nav>a{
+  display: none;
+  width: 58px;
+  height: 58px;
+  border-radius: 5px;
+  border: solid 1px #b5575f;
+}
+.nav i{
+  margin: auto;
+  color: #b5575f;
+  font-size: 35px;
 }
 nav a{
     font: normal 14px/17px "MyriadPro",sans-serif;
@@ -639,12 +652,15 @@ padding: 3px 0 12px;
   padding: 0 20px 9px 0;
   background-color: #fff;
   transition: .3s;
+  color: #808080;
 }
 .choice_bl>div h5{
   padding: 16px 20px 5px 20px;
   cursor: pointer;
   position: relative;
   font-size: 14px;
+  color: #333333;
+  font-weight: bold;
 }
 .choice_bl>div h5::after{
   content: "+";
@@ -674,6 +690,63 @@ padding: 3px 0 12px;
 }
 .choice_bl>div ul{
   padding: 0 0 0 20px;
+}
+.user_kard{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #333333;
+  color: #aaaaaa;
+  padding: 30px;
+  height: 310px;
+}
+.user_kard img{
+  align-self: center;
+  margin: 5px auto 20px;
+}
+.user_kard a{
+  color: #b5575f;
+  cursor: none;
+  display: block;
+  margin-bottom: 10px;
+}
+.user_kard p,
+.user_kard i{
+  display: block;
+  margin-bottom: 10px;
+}
+.user_kard i{
+  align-self: center;
+  padding-right: 115px;
+  display: block;
+  padding-bottom: 8spx;
+  font-size: 22px;
+  text-align: center;
+}
+.user_kard p:last-child{
+  text-align: left;
+  text-indent: 20px
+}
+.users_block{
+  position:relative;
+}
+.users_block button{
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    width: 20px;
+    color: #fff;
+    height: 20px;
+    border: solid 2px #fff;
+}
+.users_block .slick-next{
+  top: 20px;
+  right:20px;
+}
+.users_block .slick-prev{
+  top: 20px;
+  right: 50px;
+  z-index: 100;
 }
 
 /*FOOTER*/
