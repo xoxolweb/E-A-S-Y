@@ -1,0 +1,555 @@
+
+/*default*/
+h2{
+  color: #fff;
+    font: bold 48px/54px  "MyriadPro",sans-serif;
+}
+h3{
+  color: #323232;
+    font: bold 38px/42px  "MyriadPro",sans-serif;
+    text-transform: uppercase;
+}
+/*default*/
+.contain{
+  max-width: 1180px;
+  margin: auto;
+}
+.top_header{
+  width: 100%;
+  background-color: #111;
+  height: 40px;
+}
+.top_header .contain{
+  display: flex;
+  justify-content: flex-end;
+}
+.social{
+  display: flex;
+  justify-content: flex-end;
+}
+.social a{
+  color:#afafaf;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-left: solid 1px #2c2c2c;
+}
+.social a:last-child{
+  border-right: solid 1px #2c2c2c;
+}
+.logo{
+  width: 170px;
+  height: 60px;
+}
+.social a>i{
+  font-size: 15px;
+  display: block;
+  padding: 10px 0 0 5px;
+  transition: .3s;
+}
+.social a{
+  transition: .3s;
+}
+.social a:first-child>i{
+  font-size: 14px;
+}
+.social .icon-fb,
+.social .icon-tw{
+  font-size: 16px;
+  padding-left: 9px;
+}
+.social a:last-child>i{
+  font-size: 18px;
+}
+.social .icon-tw{
+  font-size: 15px;
+}
+.social a:hover i{
+  color: #fff;
+}
+.social a:hover{
+  background-color: #b5575f;
+}
+.call_back a{
+  display: block;
+  width: 172px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #b5575f;
+  text-align: center;
+  color: #fff;
+  padding-left: 10px;
+  font: normal 18px/38px  "MyriadPro",sans-serif;
+}
+.call_back{
+  position: relative;
+}
+.call_back a p:last-child{
+ display: none;
+}
+.call_back i{
+  font-size: 6px;
+  position: absolute;
+  color: #fff;
+  top: 8px;
+  left: 8px;
+}
+.bot_header .contain{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+nav, .call_back, .logo{
+  align-self: center;
+}
+nav a{
+    font: normal 14px/17px "MyriadPro",sans-serif;
+    margin-left: 28px;
+    color: #323232;
+    text-transform: uppercase;
+    position: relative;
+}
+nav a::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background-color: #323232;
+  bottom: 0;
+  left: 50%;
+  transition: .3s;
+}
+nav a:hover::after{
+  width: 100%;
+  left: 0;
+}
+/*Блок категорий -------------------*/
+.filter{
+  padding: 0 0 60px 0;
+}
+.category_bl{
+  background-color: #eeeeee;
+  height: 500px;
+}
+.category_bl .contain{
+  display: flex;
+  justify-content: space-between;
+  padding: 95px 0;
+}
+.category_bl .contain>div{
+  width: 100%;
+  max-width: 380px;
+}
+.body_category{
+  width: 100%;
+  height: 240px;
+  display: flex;
+}
+.body_category{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.body_category h2{
+display: block;
+text-align: center;
+background-color: rgba(0, 0, 0, 0.6);
+padding: 3px 0 12px;
+}
+.home_bl .body_category{
+    background: url(../img/house.jpg) no-repeat ;
+}
+.apartments_bl .body_category{
+  background: url(../img/flat.jpg) no-repeat ;
+}
+.offices_bl .body_category{
+  background: url(../img/office.jpg) no-repeat ;
+}
+.footer_category{
+  display: flex;
+  justify-content: space-between;
+}
+.footer_category a{
+  width: 50%;
+  text-align: center;
+  background-color: #b5575f;
+  color: #fff;
+  font: bold 16px/17px "MyriadPro",sans-serif;
+  padding: 25px 0;
+}
+.footer_category a:last-child{
+  background-color: #000;
+}
+.tab-content {
+    background-color: #fff;
+    box-shadow: 0 2px 3px 1px rgba(27, 27, 27, 0.29);
+    padding: 20px;
+}
+
+.tab-content input, #give_rent_form .city_form_bl select, #rooms_num, .places_form_bl select,
+#give_rent_form select {
+    background-color: #f3f3f3;
+    border: 1px solid #ececec;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26) inset;
+    height: 45px;
+    margin: 10px 0;
+    padding: 0 0 0 10px;
+    width: 200px;
+}
+.footer_for_bl select, .footer_for_bl input,
+.roms_num_bl select {
+      max-width: 100px;
+}
+#give_rent label{
+  font: 14px/16px "MyriadPro-Regular", sans-serif;
+}
+#btn_g_rent {
+    background-color: #b5575f;
+    border: medium none;
+    color: #ffffff;
+    font-family: "MyriadPro-Bold", sans-serif;
+    font-size: 18px;
+    height: 50px;
+    cursor: pointer;
+    line-height: 1.2;
+    padding: 10px;
+    margin: 23px 50px 0 30px;
+    text-align: center;
+    text-transform: uppercase;
+    min-width: 125px;
+    transition: .3s;
+}
+#btn_g_rent:hover{
+    background-color:  #c96a72;
+}
+#give_rent label::after{
+  content:'*';
+  color: #b5575f;
+}
+#give_rent_form>div, .footer_for_bl>div, .tab-content .tab-pane,.area_form_bl,.body_area_m>div,.tab-pane .rent_fack>div {
+    display: flex;
+    flex-direction: column;
+}
+.tab-pane .body_area_m{
+  display: flex;
+  flex-direction: row;
+}
+.footer_for_bl>div{
+  margin-left: 20px;
+}
+.footer_for_bl>div:first-child{
+  margin-left: 0;
+}
+.footer_for_bl .area_hov{
+  display: flex;
+  flex-direction: column;
+}
+.head_price,
+.head_area_m,.rent_fack {
+    display: flex;
+    flex-direction: row;
+}
+.rent_fack>input,
+.body_area_m>input{
+  align-self: flex-end;
+  margin-left: 20px;
+}
+.area_form_bl>input,
+.head_price>input{
+  max-width: 100%;
+  align-self: center;
+  height: 10px;
+}
+
+.head_price>div,
+.head_area_m>div{
+  margin-right: 20px;
+}
+.head_price div:last-child input, .head_price div:last-child label {
+    margin-left: 30px;
+}
+
+#give_rent_form, .footer_for_bl {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.header_filter,
+.button_category{
+  display: flex;
+  padding-bottom: 5px;
+}
+.footer_for_bl .roms_num_bl{
+  margin-left: 0;
+}
+.header_filter h3{
+  text-transform: none;
+  font: 30px/34px "MyriadPro-Regular", sans-serif;
+  margin-right: 13%;
+}
+.button_category p{
+  font:18px/20px  "MyriadPro-Bold", sans-serif;
+}
+.buy_bt,
+.rent_bt{
+  cursor: pointer;
+  padding: 22px 20px 8px;
+  margin-right: 20px;
+  background: linear-gradient(0deg, #e3e3e3 0%, white 100%);
+  transition: .2s;
+}
+.buy_bt:hover,
+.rent_bt:hover{
+  color: #b5575f;
+-webkit-box-shadow: inset 1px 3px 6px 0 rgba(0, 0, 0, 0.63);
+  box-shadow: inset 1px 3px 6px 0 rgba(0, 0, 0, 0.63);
+}
+#give_rent select{
+  position: relative;
+}
+#give_rent select:after{
+  content: ">";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  background-color: red;
+}
+.tab-content{
+  margin: -65px 0 0 0;
+  position: relative;
+  z-index: 10;
+}
+/*РЕЗУЛЬТАТ ЗАПРОСОВ БЛОК */
+.sell_card{
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.09);
+  max-width: 380px;
+  margin-bottom: 20px;
+}
+.result_filter{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.result_request_bl{
+  width: 100%;
+  background: #e7e7e7 url(../img/bg-1.jpg) no-repeat center bottom;
+  padding: 60px 0;
+}
+.header_request{
+  margin-bottom: 45px;
+}
+.head_card{
+  position: relative;
+  height: 246px;
+}
+.head_card img{
+  width: 380px;
+  height: 246px;
+}
+.bl_cent_categ{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+.prise{
+  background-color: #b5575f;
+  padding: 12px 20px;
+  color: #fff;
+}
+.rent_text{
+  background-color: #000;
+  padding: 12px 20px;
+  color: #fff;
+}
+.text_card{
+
+  width: 380px;
+  background-color: #fff;
+  padding-top: 15px;
+}
+.text_card>a{
+  color: #363636;
+  padding-left: 15px;
+  font: normal 18px/24px "MyriadPro-Regular", sans-serif;
+}
+.text_card>p{
+  color: #959595;
+  padding-left: 15px;
+  line-height: 21px;
+  padding-top: 7px;
+  height: 50px;
+}
+.about_card{
+  display: flex;
+  padding: 11px 0 11px 15px;
+  justify-content: space-between;
+  color: #636363;
+  position: relative;
+}
+.about_card:after{
+  content: "";
+  width: 90%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  background-color: #efefef;
+  top: 0;
+}
+.bed_shower{
+  display: flex;
+  margin-right: 15px;
+  width: 120px;
+  justify-content: flex-end;
+}
+.bed_shower p{
+  margin-left: 35px;
+  position: relative;
+}
+.bed_shower p::before{
+  font-size: 12px;
+  left: -40px;
+  position: absolute;
+  line-height: 16px;
+}
+.bed_shower p:last-child::before{
+    left: -21px;
+}
+
+/*ЮЛОК С РАБОТНИКОВ */
+
+.about_we_block{
+  background: #fcfdfd url(../img/bg-2.jpg) no-repeat  bottom;
+  height: 1115px;
+  width: 100%;
+    padding: 60px 0 0;
+}
+.employee_block h3{
+  margin-bottom: 50px;
+}
+.employee{
+  display: flex;
+  justify-content: space-between;
+}
+.user{
+  width: 46%;
+  height: 233px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 580px;
+  background-color: #fff;
+  padding: 18px;
+  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.12);
+  color: #969696;
+}
+.about_user span{
+  color: #353535;
+  margin: 10px 0 20px;
+  display: inline-block;
+}
+.user img{
+  width: 180px;
+  height: 180px;
+}
+.about_user{
+  margin-left: 20px;
+}
+/*ABOUT WE*/
+.about_we{
+  display: flex;
+  justify-content: space-between;
+}
+.about_we>div{
+  width: 100%;
+  max-width: 380px;
+  padding: 100px 0 0;
+}
+.about_we>div h3{
+  padding-bottom: 40px;
+}
+.map_google{
+  margin-bottom: 10px;
+}
+.map_contact_bl{
+  display: flex;
+  flex-direction: column;
+}
+.map_contact_bl>a{
+  width: 108px;
+  height: 43px;
+  border: solid 2px #333;
+  display: block;
+  color: #b5575f;
+  text-transform: uppercase;
+  text-align: center;
+  font: normal 14px/44px "MyriadPro-Regular", sans-serif;
+  transition: .3s;
+}
+.map_contact_bl>a:hover{
+  background-color: #333;
+  border: solid 2px #b5575f;
+  color: #fff;
+}
+.map_contact_bl>p{
+  color:#808080;
+  line-height: 1.3;
+  padding-bottom: 20px;
+}
+.choice_bl{
+  display: flex;
+  flex-direction: column;
+}
+.choice_bl>div{
+  border: 2px solid #dcdcdc;
+  margin-bottom: 10px;
+  padding: 0 20px 9px 0;
+  background-color: #fff;
+  transition: .3s;
+}
+.choice_bl>div h5{
+  padding: 16px 20px 5px 20px;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+}
+.choice_bl>div h5::after{
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 14px;
+  font-weight: bold;
+  font-size: 17px;
+  transition: .3s;
+}
+.choice_bl .onchoice h5::after{
+  transform: rotate(360deg);
+  content: "↓";
+}
+.choice_bl .choice_content{
+  opacity: 0;
+  padding: 0 0 0 20px;
+  height: 0;
+  transition: .3s;
+}
+.choice_bl .onchoice{
+    border: 2px solid #333;
+}
+.choice_bl .onchoice .choice_content{
+  opacity: 1;
+  height: 100%;
+}
+.choice_bl>div ul{
+  padding: 0 0 0 20px;
+}
+
+/*FOOTER*/
+
+footer{
+  background-color: #000;
+  width: 100%;
+  height: 400px;
+
+}

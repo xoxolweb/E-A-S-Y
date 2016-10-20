@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/css/reset.css">
+    <link rel="stylesheet" href="../../public/css/fonts.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/media.css">
+    <script src="../../public/libs/jquery-2.2.4.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="top_header">
+            <div class="contain">
+                <div class="social">
+                    <a href="#"> <i class="icon-vk"></i></a>
+                    <a href="#"><i class="icon-tw"></i></a>
+                    <a href="#"><i class="icon-fb"></i></a>
+                    <a href="#"><i class="icon-reply-all"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="bot_header">
+            <div class="contain">
+                <div class="logo"><img src="../../public/img/logo.svg" alt=""></div>
+                <div class="call_back">
+                    <i class="icon-fh_head"></i>
+                    <a href="tel:+0800759359">
+                        <p>0 800 759 359</p>
+                        <p>Позвонить</p>
+                    </a>
+                </div>
+                <nav>
+                    <a href="#">Арендовать</a>
+                    <a href="#">Здать</a>
+                    <a href="#">Ваш отзыв</a>
+                    <a href="#">Контакты</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="slider">
+      <div class="element_slide">
+        <div class="head_card">
+                <img src="../../public/img/template.jpg" alt="">
+            <div class="bl_cent_categ">
+                <p class="prise">$3580</p>
+                <a href="#" class="rent_text">Аренда</a>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+    <section class="category_bl">
+        <div class="contain">
+            <div class="home_bl">
+                <a href="#" class="body_category">
+                    <h2>Дома</h2>
+                </a>
+                <div class="footer_category">
+                    <a href="#">Аренда</a>
+                    <a href="#">Продажа</a>
+                </div>
+            </div>
+            <div class="apartments_bl">
+                <a href="#" class="body_category">
+                    <h2>Квартиры</h2>
+                </a>
+                <div class="footer_category">
+                    <a href="#">Аренда</a>
+                    <a href="#">Продажа</a>
+                </div>
+            </div>
+            <div class="offices_bl">
+                <a href="#" class="body_category">
+                    <h2>Офисы</h2>
+                </a>
+                <div class="footer_category">
+                    <a href="#">Аренда</a>
+                    <a href="#">Продажа</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="filter">
+        <div class="contain">
+            <div class="tab-content">
+                <div class="header_filter">
+                    <h3>Мне нужно:</h3>
+                    <div class="button_category">
+                        <div class="buy_bt">
+                            <p class="icon-home_sale">Купить</p>
+                        </div>
+                        <div class="rent_bt">
+                            <p class="icon-home_sale">Арендовать</p>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="give_rent">
+                    <div id="give_rent_form">
+                        <div class="city_form_bl">
+                            <label for="street">Город:</label>
+                            <select class="dropdown" id="city">
+                          <option value="">Город:</option>
+                      </select>
+                        </div>
+                        <div class="row_st">
+                            <label for="street">Улица:</label><input class="input-sm" type="text" id='street' placeholder="street">
+                        </div>
+                        <div class="condition_bl">
+                            <label for="condition">Состояние:</label>
+                            <select id="condition">
+                          <option value="Любое"></option>
+                      </select>
+                        </div>
+                        <div class="type_home">
+                            <label for="type_home">Тип недвижимости:</label>
+                            <select id="type_home">
+                          <option value="Любое"></option>
+                      </select>
+                        </div>
+                    </div>
+                    <div class="footer_for_bl">
+
+                        <div class="head_price">
+                            <div class="rent_fack">
+                                <div>
+                                    <label for="price">Цена:</label>
+                                    <input class="input-sm" type="text" id="price_min" placeholder="price-min">
+                                </div>
+                                <input class="input-sm" type="text" id="price_max" placeholder="price-max">
+                            </div>
+                            <input type="range" min="10" max="1000" step="10" class="input-sm" onchange="changeValue()" />
+                        </div>
+                        <div class="area_form_bl">
+                            <div class="head_area_m">
+                                <div class="body_area_m">
+                                    <div>
+                                        <label for="area">Площадь: </label>
+                                        <input id="area-min" class="input-sm" type="text" placeholder="area">
+                                    </div>
+                                    <input id="area-max" class="input-sm" type="text" placeholder="area">
+                                </div>
+                            </div>
+                            <input type="range" min="10" max="1000" step="10" class="input-sm" onchange="changeValue()" />
+                        </div>
+                        <div class="roms_num_bl">
+                            <label for="rooms_num">Кол. комнат:</label>
+                            <select id="rooms_num">
+                              <option value="">rooms</option>
+                          </select>
+                        </div>
+                        <div class="places_form_bl">
+                            <label for="ar">Спальных мест:</label>
+                            <select id="sleep_num">
+
+                              <option value=""><?php echo $i?> sleep places</option>
+                          </select>
+                        </div>
+                        <button id="btn_g_rent">Арендовать</button>
+
+                    </div>
+                </div>
+                <!-- <div role="tabpanel" class="tab-pane" id="sell">...</div>
+            <div role="tabpanel" class="tab-pane" id="rent">...</div>
+            <div role="tabpanel" class="tab-pane" id="buy">...</div> -->
+            </div>
+    </section>
+    <section class="result_request_bl">
+        <div class="contain">
+            <div class="header_request">
+                <h3>по вашему запросу</h3>
+            </div>
+            <div class="result_filter">
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="about_we_block">
+        <div class="contain">
+            <div class="employee_block">
+                <h3>наши Сотрудники</h3>
+                <div class="employee">
+                    <div class="user">
+                        <img src="../../public/img/employees.jpg" alt="">
+                        <div class="about_user">
+                            <p>Риелтор</p>
+                            <span>Иван </span>
+                            <p>Сотрудник агентства, который предоставляет услуги в сфере недвижимости.</p>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <img src="../../public/img/employees.jpg" alt="">
+                        <div class="about_user">
+                            <p>Риелтор</p>
+                            <span>Иван </span>
+                            <p>Сотрудник агентства, который предоставляет услуги в сфере недвижимости.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about_we">
+                <div class="map_contact_bl">
+                    <h3>Где нас найти</h3>
+                    <div class="map_google">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d898.0940179651598!2d30.625941281572697!3d50.45612168214366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4c5556a6c43e9%3A0xe2c7ab3942c50ece!2z0LLRg9C70LjRhtGPINCa0YDQsNC60ZbQstGB0YzQutCwLCAxNS8xNywg0JrQuNGX0LIsINCj0LrRgNCw0LjQvdCw!5e0!3m2!1sru!2sru!4v1475662339781"
+                            width="100%" height="210" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <p>Офис «E.a.s.y» расположен недалеко от метро Чергиговская, по улице Гната Хоткевича до первого поворота на право, ул.Краковская 15/17</p>
+                    <a href="https://www.google.ru/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%9A%D1%80%D0%B0%D0%BA%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0,+15%2F17,+%D0%9A%D0%B8%D1%97%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0/@50.456249,30.6257212,18z/data=!3m1!4b1!4m5!3m4!1s0x40d4c5556a6c43e9:0xe2c7ab3942c50ece!8m2!3d50.456249!4d30.626495">
+                  подробнее
+              </a>
+                </div>
+                <div class="choice_bl">
+                    <h3>выбирай easy:</h3>
+                    <div>
+                        <h5>КТО МЫ?</h5>
+                        <div class="choice_content">
+                            <p>Мы - начало новой ЭРЫ в сфере риелторских услуг по всей территории Украины!</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>НАША ЦЕЛЬ?</h5>
+                        <div class="choice_content">
+                            <p>Обратившись к нам Вы получите:<br> Удобство, комфорт, уверенность в завтрашнем дне. </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>ПОЧЕМУ МЫ?</h5>
+                        <div class="choice_content">
+                            <ul>
+                                <li>Социальная поддержка.</li>
+                                <li>Отсутствие финансовых рисков.</li>
+                                <li>Полная юридическая и материальная под- держка.</li>
+                                <li>Обеспечение комфорта , удобства для про- живания.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>ГРУЗОПЕРЕВОЗКИ</h5>
+                        <div class="choice_content">
+                            <ul>
+                                <li>Помощь с переездом.</li>
+                                <li>Услуги грузчиков (гарантия сохранности).</li>
+                                <li>Упаковка груза.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h5>КЛИНИНГ</h5>
+                        <div class="choice_content">
+                            <ul>
+                                <li>Договорное обслуживание постоянных клиентов.</li>
+                                <li>Генеральная уборка после строительства и ремонта.</li>
+                                <li>Чистка мебели и ковровых изделий (самовывоз и доставка)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="reviews_bl">
+                    <h3>нами довольны:</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="contain">
+
+
+
+        </div>
+
+    </footer>
+
+    <script src="../../public/js/main.js">
+    </script>
+</body>
+
+</html>
