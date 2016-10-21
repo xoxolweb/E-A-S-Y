@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>E-A-S-Y</title>
+    <meta name="description" content="Описание страницы сайта." />
+    <meta name="keywords" content="ключевые слова" />
+    <link rel="stylesheet" href="../../public/css/reset.css">
+    <link rel="stylesheet" href="../../public/css/fonts.css">
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="../../public/css/media.css">
+    <script src="../../public/libs/jquery-2.2.4.min.js"></script>
+    <script src="../../public/libs/slick.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="top_header">
+            <div class="contain">
+                <div class="social">
+                    <a href="#"> <i class="icon-vk"></i></a>
+                    <a href="#"><i class="icon-tw"></i></a>
+                    <a href="#"><i class="icon-fb"></i></a>
+                    <a href="#"><i class="icon-reply-all"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="bot_header">
+            <div class="contain">
+                <div class="logo">
+                    <a href=""><img src="../../public/img/logo.svg" alt="logo e-a-s-y"></a>
+                </div>
+                <div class="call_back">
+                    <i class="icon-fh_head"></i>
+                    <a href="tel:+0800759359">
+                        <p>0 800 759 359</p>
+                        <p>Звонок</p>
+                    </a>
+                </div>
+                <div class="nav">
+                    <a href="#">
+                        <i class="icon-menu"></i>
+                    </a>
+                    <nav>
+                        <a href="#">Арендовать</a>
+                        <a href="#">Здать</a>
+                        <a href="#">Ваш отзыв</a>
+                        <a href="#">Контакты</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="top_background">
+    </section>
+    <div class="bread_crumbs">
+        <div class="contain">
+            <div class="speedbar">
+                <span class="first_speed"><a href="#">Агентство недвижимости E-A-S-Y</a><span>&rArr;</span></span>
+                <span><a href="#"> Арендовать</a></span>
+            </div>
+        </div>
+    </div>
+    <section class="body_kategory">
+        <div class="contain">
+            <div class="kategory_card">
+
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sell_card">
+                    <div class="head_card">
+                        <a href="#">
+                            <img src="../../public/img/template.jpg" alt="">
+                        </a>
+                        <div class="bl_cent_categ">
+                            <p class="prise">$3580</p>
+                            <a href="#" class="rent_text">Аренда</a>
+                        </div>
+                    </div>
+                    <div class="text_card">
+                        <a href="#">Chatham St NW. Roanoke, VA 24012</a>
+                        <p>Lorem impsulm, insulim sulem malin tempo</p>
+                        <div class="about_card">
+                            <p>Площадь: 450m2</p>
+                            <div class="bed_shower">
+                                <p class="icon-bed">2</p>
+                                <p class="icon-wash">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right_bl_kategory">
+                <div id="search_form">
+                    <select id="type_home">
+                      <option  value="">Любой</option>
+                      <? foreach ($types as $type) : ?>
+                          <option value="<? print($type); ?>"><? print($type); ?></option>
+                      <? endforeach; ?>
+                  </select>
+                    <select id="city">
+                       <option value="">Любой</option>
+                      <? foreach ($cities as $city) : ?>
+                          <option value="<? print($city); ?>"><? print($city); ?></option>
+                      <? endforeach; ?>
+                  </select>
+
+                    <select name="condition">
+                       <option value="" >Любое</option>
+                      <? foreach ($conditions as $condition) : ?>
+                          <option value="<? print($condition); ?>"><? print($condition); ?></option>
+                      <? endforeach; ?>
+                  </select>
+                    <select name="rooms_num">
+                      <option value="" >Любое</option>
+                      <? foreach ($room_nums as $room_num) : ?>
+                          <option value="<? print($room_num); ?>"><? print($room_num); ?></option>
+                      <? endforeach; ?>
+                  </select>
+                    <select id="sleep_num">
+                      <option value="" >Любое</option>
+                      <? foreach ($sl_places as $sl_pl) : ?>
+                          <option value="<? print($sl_pl); ?>"><? print($sl_pl); ?></option>
+                      <? endforeach; ?>
+                  </select>
+                    <input type="text" id="price_min" placeholder="Цена От $" autocomplete="off">
+                    <input type="text" id="price_max" placeholder="Цена До $" autocomplete="off">
+                    <input type="text" id="area_min" placeholder="Площадь От" autocomplete="off">
+                    <input type="text" id="area-max" placeholder="Площадь До" autocomplete="off">
+                    <div class="clearfix"></div>
+                    <button class="btn btn-default" id="search">Поиск</button>
+                </div>
+                <div class="employees_slider">
+                    <h6>НАШИ СПЕЦИАЛИСТЫ</h6>
+                    <div class="employees_bl">
+                        <div class="emplo_card_slid">
+                            <img src="../../public/img/specialist-face.png" alt="specialist-face">
+                            <p>Риелтор</p>
+                            <p>Георгий</p>
+                        </div>
+                        <div class="emplo_card_slid">
+                            <img src="../../public/img/specialist-face.png" alt="specialist-face">
+                            <p>Риелтор</p>
+                            <p>Георгий</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reviews_users">
+                    <div class="users_block">
+                        <div class="user_kard">
+                            <img src="../../public/img/feedback-face.png" alt="Андрей Филипов">
+                            <a href="">Андрей Филипов</a>
+                            <p>Покупатель</p>
+                            <i class="icon-feedback"></i>
+                            <p>Желаю процветания Вашей фирме, а сотрудникам - здоровья, терпения, бодрости и сил. Благодаря Вам, мы довольны на все 100%!</p>
+                        </div>
+                        <div class="user_kard">
+                            <img src="../../public/img/feedback-face.png" alt="Андрей Филипов">
+                            <a href="">Андрей Филипов</a>
+                            <p>Покупатель</p>
+                            <i class="icon-feedback"></i>
+                            <p>Желаю процветания Вашей фирме, а сотрудникам - здоровья, терпения, бодрости и сил. Благодаря Вам, мы довольны на все 100%!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="contain">
+            <div class="contact">
+                <p>Детали контактов</p>
+                <p>Офис: <a href="tel:+380800759359">0 800 759 359</a></p>
+                <p>Мобильный: <a href="tel:+380932739359">(093) 273-93-59</a></p>
+                <p>Мобильный: <a href="tel:+380672759359">(067) 275-93-59</a></p>
+                <p>Mail: <a href="mailto:support@e-a-s-y.in.ua">support@e-a-s-y.in.ua</a></p>
+            </div>
+            <div class="tags">
+                <p>Теги</p>
+
+            </div>
+            <div class="subscription">
+                <p>не пропустите</p>
+                <p>У нас для вас есть выгодное предложение, для подробной информации: </p>
+                <form action="">
+                    <input placeholder="Введите адрес электронной почты здесь" type="email">
+                    <input value=">" type="submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+    <script src="../../public/js/main.js"></script>
+</body>
+
+</html>

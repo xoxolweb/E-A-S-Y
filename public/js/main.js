@@ -5,16 +5,18 @@ $('.choice_bl>div h5').on('click',function(){
   $(this).parent().toggleClass('onchoice')
 })
 //slider
-$('.wraper_slider').slick({
-  infinite: true,
-  autoplay: true,
-  speed: 500
-});
-$('.users_block').slick({
-  infinite: true,
-  autoplay: true,
-  speed: 500
-});
+var arrElem=['.wraper_slider','.users_block','.employees_bl']
+function setSlidElem(arr){
+  for(var i=0;i<arr.length;i++){
+    $(arr[i]).slick({
+      infinite: true,
+      autoplay: true,
+      speed: 500
+    });
+  }
+}
+setSlidElem(arrElem);
+
 // context_about hidden block
 $('.context_about h1').on('click', function(){
   $('.body_about').slideToggle()
