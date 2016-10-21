@@ -64,10 +64,9 @@
             </div>
         </div>
     </div>
-    <section class="body_kategory">
+    <section class="body_block_category">
         <div class="contain">
-            <div class="kategory_card">
-
+            <div class="category_card">
                 <div class="sell_card">
                     <div class="head_card">
                         <a href="#">
@@ -135,43 +134,47 @@
                     </div>
                 </div>
             </div>
-            <div class="right_bl_kategory">
-                <div id="search_form">
+            <div class="right_bl_category">
+                <div id="search_form" class="form_filter_cat">
+                  <h6>ПОИСК ОБЕКТА</h6>
                     <select id="type_home">
-                      <option  value="">Любой</option>
+                      <option value="" hidden="">Дома</option>
                       <? foreach ($types as $type) : ?>
                           <option value="<? print($type); ?>"><? print($type); ?></option>
                       <? endforeach; ?>
                   </select>
                     <select id="city">
-                       <option value="">Любой</option>
+                       <option value="" hidden="">Улица:</option>
                       <? foreach ($cities as $city) : ?>
                           <option value="<? print($city); ?>"><? print($city); ?></option>
                       <? endforeach; ?>
                   </select>
-
                     <select name="condition">
-                       <option value="" >Любое</option>
+                       <option value="" hidden="">Состояние:</option>
                       <? foreach ($conditions as $condition) : ?>
                           <option value="<? print($condition); ?>"><? print($condition); ?></option>
                       <? endforeach; ?>
                   </select>
                     <select name="rooms_num">
-                      <option value="" >Любое</option>
+                      <option value="" hidden="" >Тип недвижимости:</option>
                       <? foreach ($room_nums as $room_num) : ?>
                           <option value="<? print($room_num); ?>"><? print($room_num); ?></option>
                       <? endforeach; ?>
                   </select>
                     <select id="sleep_num">
-                      <option value="" >Любое</option>
+                      <option value="" hidden="">Кол. комнат:</option>
                       <? foreach ($sl_places as $sl_pl) : ?>
                           <option value="<? print($sl_pl); ?>"><? print($sl_pl); ?></option>
                       <? endforeach; ?>
                   </select>
-                    <input type="text" id="price_min" placeholder="Цена От $" autocomplete="off">
-                    <input type="text" id="price_max" placeholder="Цена До $" autocomplete="off">
-                    <input type="text" id="area_min" placeholder="Площадь От" autocomplete="off">
-                    <input type="text" id="area-max" placeholder="Площадь До" autocomplete="off">
+                    <div class="prise_category">
+                        <input type="text" id="price_min" placeholder="Цена от:" autocomplete="off">
+                        <input type="text" id="price_max" placeholder="Цена до:" autocomplete="off">
+                    </div>
+                    <div class="area_category">
+                        <input type="text" id="area_min" placeholder="Площадь от:" autocomplete="off">
+                        <input type="text" id="area-max" placeholder="Площадь до:" autocomplete="off">
+                    </div>
                     <div class="clearfix"></div>
                     <button class="btn btn-default" id="search">Поиск</button>
                 </div>
@@ -213,15 +216,6 @@
 
         </div>
     </section>
-
-
-
-
-
-
-
-
-
 
     <footer>
         <div class="contain">

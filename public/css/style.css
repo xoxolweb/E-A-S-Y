@@ -1182,54 +1182,102 @@ footer .contain {
 
 /*body kategory*/
 
-.body_kategory {
-    min-height: 1000px;
+.body_block_category {
+    min-height: 1450px;
     background: #EFEFEF url(../img/bg-1.jpg) no-repeat;
 }
 
-.body_kategory .contain {
+.body_block_category .contain {
     display: flex;
     justify-content: space-between;
 }
 
+/*form_filter_cat*/
+
+.form_filter_cat{
+  align-self: center;
+  padding: 30px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+.form_filter_cat h6,
+.employees_slider h6{
+  margin-bottom: 20px;
+  color: #373737;
+}
+.form_filter_cat select,
+.form_filter_cat input{
+  height: 40px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  color: #959595;
+  border: solid 1px #ececec;
+}
+.prise_category,
+.area_category{
+  display: flex;
+  justify-content: space-between;
+}
+.prise_category input:first-child,
+.area_category input:first-child{
+  margin-right: 5px;
+}
+.prise_category input:last-child,
+.area_category input:last-child{
+  margin-left: 5px;
+}
+.form_filter_cat button{
+  background-color: #b5575f;
+  border: none;
+  padding: 15px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
 
 /*kard*/
 
-.kategory_card {
+.category_card {
     display: flex;
     width: 100%;
     max-width: 840px;
     flex-wrap: wrap;
 }
 
-.kategory_card .sell_card {
+.category_card .sell_card {
     max-width: 270px;
     max-height: 378px;
     margin: 0 15px 15px 0;
 }
 
-.kategory_card .sell_card:nth-child(3n) {
+.category_card .sell_card:nth-child(3n) {
     margin-right: 0;
 }
 
-.kategory_card .sell_card img {
+.category_card .sell_card img {
     width: 100%;
     height: 180px;
 }
 
-.kategory_card .sell_card .head_card {
+.category_card .sell_card .head_card {
     height: 180px;
 }
 
-.kategory_card .sell_card .text_card {
+.category_card .sell_card .text_card {
     width: 255px;
 }
 
-.kategory_card .sell_card .text_card>a {
+.category_card .sell_card .text_card>a {
     font-size: 17px;
 }
 
-.kategory_card .sell_card .text_card>p {
+.category_card .sell_card .text_card>p {
     height: 90px;
     font-size: 14px;
     line-height: 20px;
@@ -1242,13 +1290,7 @@ footer .contain {
     margin-bottom: 20px;
     padding: 30px;
     background-color: #fff;
-}
-
-.employees_slider h6 {
-    display: block;
-    margin-bottom: 20px;
-}
-
+  }
 .emplo_card_slid {
     display: flex;
     flex-direction: column;
@@ -1275,24 +1317,22 @@ footer .contain {
     font-size: 16px;
 }
 
-.right_bl_kategory {
-    width: 300px;
+.right_bl_category {
+    max-width: 300px;
+    padding-left: 40px;
 }
-
 .employees_bl {
     position: relative;
 }
-
 .employees_bl .slick-prev {
     z-index: 100;
     top: -40px;
-    right: 50px;
+    right: 25px;
     background-color: #ccc;
 }
-
 .employees_bl .slick-next {
     top: -40px;
-    right: 20px;
+    right: -5px;
     background-color: #ccc;
 }
 
@@ -1305,6 +1345,5 @@ footer .contain {
     border: solid 2px #000;
     background-color: transparent;
 }
-
 
 /*OBJECT страница 2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
