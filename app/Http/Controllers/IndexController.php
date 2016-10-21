@@ -13,9 +13,10 @@ class IndexController extends Controller
     //
     public function index(){
 
+        $model = new Bid();
+        $items = $model::all();
 
-
-        return view('site.main');
+        return view('site.main')->with(compact('items'));
     }
 
     public function category($category){

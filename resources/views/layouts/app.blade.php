@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
+    <title>E-A-S-Y</title>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+
+    <meta name="description" content="Описание страницы сайта." />
+    <meta name="keywords" content="ключевые слова" />
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href=" /public/css/fonts.css">
     <link rel="stylesheet" href=" /public/css/style.css">
@@ -16,48 +20,71 @@
 </head>
 
 <body>
+<!--- header -> start --->
 <header>
-    <div class="top_header">
-        <div class="contain">
-            <div class="social">
-                <a href="#" class="icon-vk"></a>
-                <a href="#" class="icon-tw"></a>
-                <a href="#" class="icon-fb"></a>
-                <a href="#" class="icon-reply-all"></a>
-            </div>
+<div class="top_header">
+    <div class="contain">
+        <div class="social">
+            <a href="#"> <i class="icon-vk"></i></a>
+            <a href="#"><i class="icon-tw"></i></a>
+            <a href="#"><i class="icon-fb"></i></a>
+            <a href="#"><i class="icon-reply-all"></i></a>
         </div>
     </div>
-    <div class="bot_header">
-        <div class="contain">
-            <div class="logo"><img src=" /public/img/logo.svg" alt=""></div>
-            <div class="call_back">
-                <i class="icon-fh_head"></i>
-                <a href="tel:+0800759359">
-                    <p>0 800 759 359</p>
-                    <p>Позвонить</p>
-                </a>
-            </div>
-            <div class="nav">
-                <a href="#">555</a>
+</div>
+<div class="bot_header">
+    <div class="contain">
+        <div class="logo">
+            <a href=""><img src="../../public/img/logo.svg" alt="logo e-a-s-y"></a>
+        </div>
+        <div class="call_back">
+            <i class="icon-fh_head"></i>
+            <a href="tel:+0800759359">
+                <p>0 800 759 359</p>
+                <p>Звонок</p>
+            </a>
+        </div>
+        <div class="nav">
+            <a href="#">
+                <i class="icon-menu"></i>
+            </a>
             <nav>
                 <a href="#">Арендовать</a>
                 <a href="#">Здать</a>
                 <a href="#">Ваш отзыв</a>
                 <a href="#">Контакты</a>
             </nav>
-            </div>
         </div>
     </div>
+</div>
 </header>
-
+<!--- header -> end --->
         @yield('content')
-
-{{--<footer>--}}{{--
-
+<!--- footer -> start --->
+<footer>
     <div class="contain">
+        <div class="contact">
+            <p>Детали контактов</p>
+            <p>Офис: <a href="tel:+380800759359">0 800 759 359</a></p>
+            <p>Мобильный: <a href="tel:+380932739359">(093) 273-93-59</a></p>
+            <p>Мобильный: <a href="tel:+380672759359">(067) 275-93-59</a></p>
+            <p>Mail: <a href="mailto:support@e-a-s-y.in.ua">support@e-a-s-y.in.ua</a></p>
+        </div>
+        <div class="tags">
+            <p>Теги</p>
 
+        </div>
+        <div class="subscription">
+            <p>не пропустите</p>
+            <p>У нас для вас есть выгодное предложение, для подробной информации: </p>
+            <form action="">
+                <input placeholder="Введите адрес электронной почты здесь" type="email">
+                <input value=">" type="submit">
+            </form>
+        </div>
     </div>
---}}{{--</footer>--}}
+</footer>
+<!--- footer -> end --->
 
 <!-- Scripts -->
 

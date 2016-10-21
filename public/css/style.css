@@ -22,6 +22,7 @@ h3{
 .top_header .contain{
   display: flex;
   justify-content: flex-end;
+  background-color: #111;
 }
 .social{
   display: flex;
@@ -103,7 +104,16 @@ h3{
   align-self: center;
 }
 .nav>a{
-    display: none;
+  display: none;
+  width: 58px;
+  height: 58px;
+  border-radius: 5px;
+  border: solid 1px #b5575f;
+}
+.nav i{
+  margin: auto;
+  color: #b5575f;
+  font-size: 35px;
 }
 nav a{
     font: normal 14px/17px "MyriadPro",sans-serif;
@@ -263,7 +273,6 @@ nav a:hover::after{
 .filter{
   padding: 0 0 60px 0;
 }
-
 .category_bl{
   background-color: #eeeeee;
   height: 500px;
@@ -285,13 +294,19 @@ nav a:hover::after{
 .body_category{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  transition: .3s;
 }
 .body_category h2{
 display: block;
 text-align: center;
 background-color: rgba(0, 0, 0, 0.6);
 padding: 3px 0 12px;
+transition: .3s;
+margin-top: 23%;
+}
+.body_category:hover h2{
+  margin-top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .home_bl .body_category{
     background: url(../img/house.jpg) no-repeat ;
@@ -313,6 +328,33 @@ padding: 3px 0 12px;
   color: #fff;
   font: bold 16px/17px "MyriadPro",sans-serif;
   padding: 25px 0;
+  position:relative;
+}
+.footer_category a::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #FFF;
+  bottom: 32%;
+  opacity:0;
+  transition: .3s;
+}
+.footer_category a:first-child::before{
+  right: 0;
+}
+.footer_category a:last-child::before{
+  left: 0;
+}
+.footer_category a:last-child:hover::before{
+  opacity: 1;
+  width: 50%;
+  left: 25%;
+}
+.footer_category a:first-child:hover::before{
+  opacity: 1;
+  width: 50%;
+  right: 25%;
 }
 .footer_category a:last-child{
   background-color: #000;
@@ -333,12 +375,36 @@ padding: 3px 0 12px;
     padding: 0 0 0 10px;
     width: 200px;
 }
+.tab-content input{
+  color: #bebebe;
+}
 .footer_for_bl select, .footer_for_bl input,
 .roms_num_bl select {
       max-width: 100px;
 }
+select {
+  width: 100px;
+  height: 26px;
+  -webkit-appearance: none;
+  background-image: url(../img/1.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  line-height: 1em;
+  padding-right: 40px;
+  /* for FF */
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: '';
+  color: #bebebe;
+  /* for IE */
+  -ms-appearance: none;
+  appearance: none!important;
+}
+select::-ms-expand {
+  display: none;
+}
 #give_rent label{
-  font: 14px/16px "MyriadPro-Regular", sans-serif;
+  font: 16px/18px "MyriadPro-Regular", sans-serif;
 }
 #btn_g_rent {
     background-color: #b5575f;
@@ -350,10 +416,10 @@ padding: 3px 0 12px;
     cursor: pointer;
     line-height: 1.2;
     padding: 10px;
-    margin: 23px 50px 0 30px;
+    margin: 23px 0 0 30px;
     text-align: center;
     text-transform: uppercase;
-    min-width: 125px;
+    min-width: 200px;
     transition: .3s;
 }
 #btn_g_rent:hover{
@@ -397,6 +463,7 @@ padding: 3px 0 12px;
   align-self: center;
   height: 10px;
 }
+
 .head_price>div,
 .head_area_m>div{
   margin-right: 20px;
@@ -404,10 +471,19 @@ padding: 3px 0 12px;
 .head_price div:last-child input, .head_price div:last-child label {
     margin-left: 30px;
 }
+
 #give_rent_form, .footer_for_bl {
     display: flex;
     justify-content: space-between;
     padding-top: 20px;
+}
+.button_category>div {
+  position: relative;
+}
+.button_category>div p::before{
+  top: 4px;
+  left: 43%;
+  position: absolute;
 }
 .header_filter,
 .button_category{
@@ -423,12 +499,14 @@ padding: 3px 0 12px;
   margin-right: 13%;
 }
 .button_category p{
-  font:18px/20px  "MyriadPro-Bold", sans-serif;
+  font:18px/20px "MyriadPro-Bold", sans-serif;
+  text-align: center;
 }
 .buy_bt,
 .rent_bt{
   cursor: pointer;
-  padding: 22px 20px 8px;
+  width: 193px;
+  padding: 24px 0 6px;
   margin-right: 20px;
   background: linear-gradient(0deg, #e3e3e3 0%, white 100%);
   transition: .2s;
@@ -455,11 +533,30 @@ padding: 3px 0 12px;
   position: relative;
   z-index: 10;
 }
+.clear_filter{
+  position: absolute;
+  right: 40px;
+  color: #b5575f;
+  font-size: 18px;
+  bottom: 20px;
+}
+.clear_filter i{
+  font-size: 22px;
+  margin-right: 10px;
+}
 /*РЕЗУЛЬТАТ ЗАПРОСОВ БЛОК */
 .sell_card{
   box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.09);
   max-width: 380px;
   margin-bottom: 20px;
+  transition: .3s;
+  border-bottom: solid 1px transparent;
+}
+.sell_card:hover{
+  box-shadow: 0 12px 56px -10px rgba(0,0,0,0.8);
+-webkit-box-shadow: 0 12px 56px -10px rgba(0,0,0,0.8);
+-moz-box-shadow: 0 12px 56px -10px rgba(0,0,0,0.8);
+border-bottom: solid 1px #b5575f;
 }
 .result_filter{
   display: flex;
@@ -500,26 +597,24 @@ padding: 3px 0 12px;
   color: #fff;
 }
 .text_card{
-
+  padding-left: 15px;
   width: 380px;
   background-color: #fff;
   padding-top: 15px;
 }
 .text_card>a{
   color: #363636;
-  padding-left: 15px;
   font: normal 18px/24px "MyriadPro-Regular", sans-serif;
 }
 .text_card>p{
   color: #959595;
-  padding-left: 15px;
   line-height: 21px;
   padding-top: 7px;
   height: 50px;
 }
 .about_card{
   display: flex;
-  padding: 11px 0 11px 15px;
+  padding: 11px 0 11px 0;
   justify-content: space-between;
   color: #636363;
   position: relative;
@@ -552,14 +647,12 @@ padding: 3px 0 12px;
 .bed_shower p:last-child::before{
     left: -21px;
 }
-
-/*ЮЛОК С РАБОТНИКОВ */
-
+/*БЛОК С РАБОТНИКОВ */
 .about_we_block{
   background: #fcfdfd url(../img/bg-2.jpg) no-repeat  bottom;
-  height: 1115px;
+
   width: 100%;
-    padding: 60px 0 0;
+    padding: 60px 0 60px;
 }
 .employee_block h3{
   margin-bottom: 50px;
@@ -600,6 +693,10 @@ padding: 3px 0 12px;
   width: 100%;
   max-width: 380px;
   padding: 100px 0 0;
+  transition: .3s;
+}
+.choice_bl>div:hover{
+    border: 2px solid #333;
 }
 .about_we>div h3{
   padding-bottom: 40px;
@@ -642,12 +739,15 @@ padding: 3px 0 12px;
   padding: 0 20px 9px 0;
   background-color: #fff;
   transition: .3s;
+  color: #808080;
 }
 .choice_bl>div h5{
   padding: 16px 20px 5px 20px;
   cursor: pointer;
   position: relative;
   font-size: 14px;
+  color: #333333;
+  font-weight: bold;
 }
 .choice_bl>div h5::after{
   content: "+";
@@ -678,12 +778,257 @@ padding: 3px 0 12px;
 .choice_bl>div ul{
   padding: 0 0 0 20px;
 }
+.user_kard{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #333333;
+  color: #aaaaaa;
+  padding: 30px;
+  height: 310px;
+}
+.user_kard img{
+  align-self: center;
+  margin: 5px auto 20px;
+}
+.user_kard a{
+  color: #b5575f;
+  cursor: none;
+  display: block;
+  margin-bottom: 10px;
+}
+.user_kard p,
+.user_kard i{
+  display: block;
+  margin-bottom: 10px;
+}
+.user_kard i{
+  align-self: center;
+  padding-right: 115px;
+  display: block;
+  padding-bottom: 8spx;
+  font-size: 22px;
+  text-align: center;
+}
+.user_kard p:last-child{
+  text-align: left;
+  text-indent: 20px
+}
+.users_block{
+  position:relative;
+}
+.users_block button{
+    position: absolute;
+    cursor: pointer;
+    background-color: transparent;
+    width: 20px;
+    color: #fff;
+    height: 20px;
+    border: solid 2px #fff;
+}
+.users_block .slick-next{
+  top: 20px;
+  right:20px;
+}
+.users_block .slick-prev{
+  top: 20px;
+  right: 50px;
+  z-index: 100;
+}
+/*ABOUT CONTENT */
+.context_about{
+  border: solid 1px #333;
+  padding: 0 18px 0 18px;
+  margin-bottom: 50px;
+  transition: .3s;
+}
+.context_about:hover{
+   border: solid 1px #b5575f ;
+}
+.context_about.active_about{
+  border: solid 1px #b5575f;
+}
+.context_about h1 {
+    font-size: 38px;
+    font-family: "MyriadPro-Bold",sans-serif;
+    color: #323232;
+    text-transform: uppercase;
+    text-align: left;
+    position: relative;
+    display: inline-block;
+    padding: 20px 0 20px;
+    display: block;
+    cursor: pointer;
+}
+.context_about h1::after{
+  content: "+";
+  top: 17px;
+  position: absolute;
+  right: 0;
+  font-size: 35px;
+  transition: .3s;
+}
+.context_about.active_about h1::after{
+  content: "↓";
+  transform: rotate(360deg);
+}
+.body_about{
+  display: none;
+}
+.body_about p{
+  padding: 15px;
+}
+.body_about ul{
+  margin-left 10px;
+}
+.body_about li{
+  margin-left: 18px;
+  line-height: 24px;
+}
+.body_about h4{
+  font-size: 17px;
+  font-weight: bold;
+  margin: 18px 0;
+}
 
 /*FOOTER*/
 
 footer{
   background-color: #000;
   width: 100%;
-  height: 400px;
-
+  padding: 60px 0 100px;
 }
+footer .contain{
+  display: flex;
+  justify-content: space-between;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+}
+
+.contact p{
+  color: #bdbdbd;
+  padding-bottom: 10px;
+}
+.subscription p{
+  color: #535353;
+}
+.contact p:first-child,
+.tags p,.subscription p:first-child{
+  color: #fff;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+.contact a{
+  color:#bdbdbd;
+  transition: .3s;
+}
+.contact p:last-child a{
+  color:#b5575f;
+}
+.contact a:hover{
+  color:#b5575f;
+}
+.subscription,
+.contact, .tags{
+  width: 100%;
+  max-width: 380px;
+}
+.subscription form {
+  position: relative;
+  margin-top: 20px;
+}
+.subscription form input:first-child{
+  width: 300px;
+  height: 34px;
+  padding-left:15px;
+  color: #adadad;
+}
+.subscription form input:last-child{
+  cursor: pointer;
+  height: 40px;
+  position: absolute;
+  right: 50px;
+  top: 0;
+  width: 40px;
+  background-color: #fff;
+  border: none;
+  color: #adadad;
+  font-weight: bold;
+}
+
+.subscription p{
+  line-height: 20px;
+}
+
+/*OBJECT страница 2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.top_background{
+  background:  url(../img/product-bg.jpg) no-repeat;
+  height: 300px;
+  width: 100%;
+  margin: auto;
+  background-size: cover;
+}
+.speedbar a{
+  color:#363636;
+}
+.speedbar{
+  padding: 20px 0;
+}
+.speedbar>span>span{
+  font-size: 19px;
+}
+.bread_crumbs{
+  width: 100%;
+  background-color: #F1F1F1;
+}
+
+/*body kategory*/
+.body_kategory{
+  background: url(../img/bg-1.jpg) no-repeat;
+  height: 1000px;
+}
+.body_kategory .contain{
+  display: flex;
+  justify-content: space-between;
+}
+.kategory_card {
+  display: flex;
+  justify-content: space-between;
+}
+/*kard*/
+.kategory_card{
+  display: flex;
+  width: 100%;
+  max-width: 840px;
+  justify-content: space-between;
+}
+.kategory_card .sell_card{
+    max-width: 270px;
+  }
+.kategory_card .sell_card img{
+  width: 100%;
+  height: 180px;
+}
+.kategory_card .sell_card .head_card{
+  height: 180px;
+}
+.kategory_card .sell_card .text_card{
+  width: 255px;
+}
+.kategory_card .sell_card .text_card>a{
+  font-size: 17px;
+}
+.kategory_card .sell_card .text_card>p{
+  font-size: 14px;
+}
+
+
+
+.right_bl_kategory{
+  width: 300px;
+}
+
+
+/*OBJECT страница 2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
