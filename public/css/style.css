@@ -1037,28 +1037,7 @@ footer .contain{
   margin-bottom: 10px;
   display: block;
 }
-.employee{
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-.employee img{
-  width: 230px;
-  align-self: center;
-  height: 230px;
-}
-.employee p{
-  padding-left: 35px;
-  color: #b5b5b5;
-  font-size: 14px;
-  padding-top: 15px;
-}
-.employee p:last-child{
-  font-size: 16px;
-  padding-top: 8px;
-  color: #323232;
-  text-transform: uppercase;
-}
+
 
 .right_bl_kategory{
   width: 300px;

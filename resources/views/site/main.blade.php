@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-
+    <!--- slider start -->
     <section class="slider">
         <div class="wraper_slider">
             <div>
-                <img src="../../public/img/bgslide.jpg" alt="">
+                <img src="/public/img/bgslide.jpg" alt="">
                 <div class="element_slide">
                     <div>
                         <div class="bl_cent_categ">
-                            <p class="prise">$3580</p>
+                            <p class="prise">${{ $slider_obj->price }}</p>
                             <a href="#" class="rent_text">Подробнее</a>
                         </div>
                         <div class="text_card">
-                            <a href="#">Chatham St NW. Roanoke, VA 24012</a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque rerum, dignissimos enim recusandae quis consectetur fugiat similique facere quaerat cum quibusdam ad voluptatibus dolorem deleniti ullam porro hic minus facilis.</p>
+                            <a href="#">{{$slider_obj->city}},{{$slider_obj->region}}</a>
+                            <p>{{$slider_obj->description}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <img src="../../public/img/bgslide.jpg" alt="">
+                <img src="/public/img/bgslide.jpg" alt="">
                 <div class="element_slide">
                     <div>
                         <div class="bl_cent_categ">
@@ -37,6 +37,9 @@
 
         </div>
     </section>
+    <!--- slider end -->
+
+    <!-- categories section start-->
     <section class="category_bl">
         <div class="contain">
             <div class="home_bl">
@@ -69,6 +72,9 @@
             </div>
         </div>
     </section>
+    <!-- categories section end-->
+
+    <!-- filter start -->
     <section class="filter">
         <div class="contain">
             <div class="tab-content">
@@ -86,9 +92,12 @@
                 <div role="tabpanel" class="tab-pane" id="give_rent">
                     <div id="give_rent_form">
                         <div class="city_form_bl">
-                            <label for="street">Любой</label>
+                            <label for="city">Город:</label>
                             <select class="dropdown" id="city">
-                                <option value="">Город:</option>
+                                <option value="">Любой</option>
+                            @foreach($cities as $city)
+                                <option value="{{$city}}">{{$city}}</option>
+                            @endforeach
                             </select>
                         </div>
                         <div class="row_st">
@@ -98,12 +107,18 @@
                             <label for="condition">Состояние:</label>
                             <select id="condition">
                                 <option value="Любое">Любое</option>
+                                @foreach($conditions as $condition)
+                                    <option value="{{$condition}}">{{$condition}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="type_home">
                             <label for="type_home">Тип недвижимости:</label>
                             <select id="type_home">
                                 <option value="Любое">Любой</option>
+                                @foreach($types as $type)
+                                    <option value="{{$type}}">{{$type}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -134,20 +149,25 @@
                         <div class="roms_num_bl">
                             <label for="rooms_num">Кол. комнат:</label>
                             <select id="rooms_num">
-                                <option value="">1</option>
+                                <option value="">Любое</option>
+                                @foreach($room_numbers as $room_number)
+                                    <option value="{{$room_number}}">{{$room_number}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="places_form_bl">
                             <label for="ar">Спальных мест:</label>
                             <select id="sleep_num">
-
-                                <option value=""> 3</option>
+                                <option value="">Любое</option>
+                                @foreach($sleep_places as $sl_places)
+                                    <option value="{{$sl_places}}">{{$sl_places}}</option>
+                                @endforeach
                             </select>
                         </div>
-                        <button id="btn_g_rent">Арендовать</button>
+                        <button id="btn_g_rent">Filter</button>
 
                     </div>
-                    <a href="#" class="clear_filter"><i class="icon-latex"></i>Очистить</a>
+                    <a href="#" class="clear_filter"><i class="icon-latex"></i>Clear filter</a>
                 </div>
                 <!-- <div role="tabpanel" class="tab-pane" id="sell">...</div>
             <div role="tabpanel" class="tab-pane" id="rent">...</div>
@@ -155,6 +175,7 @@
             </div>
          </div>
     </section>
+    <!-- serch result-->
     <section class="result_request_bl">
         <div class="contain">
             <div class="header_request">
@@ -188,6 +209,9 @@
             </div>
         </div>
     </section>
+    <!-- filter end -->
+
+    <!-- about start -->
     <section class="about_we_block">
         <div class="contain">
             <div class="employee_block">
@@ -332,4 +356,5 @@
 
         </div>
     </section>
+    <!-- about end -->
 @endsection

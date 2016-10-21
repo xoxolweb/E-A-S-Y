@@ -16,7 +16,28 @@ class IndexController extends Controller
         $model = new Bid();
         $items = $model::all();
 
-        return view('site.main')->with(compact('items'));
+
+        $avg_price = $items->average('price');
+        $slider_objs = $model::where('price','>',$avg_price)->get();
+        $seed = rand(0,count($slider_objs)-1);
+        $slider_obj = $slider_objs[$seed];
+
+        foreach ($items as $item) {
+            $cities[] = $item->city;
+            $conditions[] = $item->condition;
+            $types[] = $item->type;
+            $room_numbers[] = $item->room_number;
+            $sleep_places[] = $item->sleep_places;
+        }
+
+        $cities = array_unique($cities);
+        $types = array_unique($types);
+        $conditions = array_unique($conditions);
+        $room_numbers = array_unique($room_numbers);
+        $sleep_places = array_unique($sleep_places);
+
+        return view('site.main')->with(compact('items','cities','types','conditions',
+                                                'room_numbers','sleep_places','slider_obj'));
     }
 
     public function category($category){
