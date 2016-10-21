@@ -39,24 +39,25 @@
                     <p>Позвонить</p>
                 </a>
             </div>
+            <div class="nav">
             <nav>
                 <a href="{{ route('adminAddNew') }}">Добавить</a>
                 <a href="{{ route('adminEdit') }}">Редактировать</a>
 
                 <a href="{{ route('logout') }}"><b>Выйти</b></a>
             </nav>
+            </div>
         </div>
     </div>
 </header>
 
         @yield('content')
 
-{{--<footer>--}}{{--
-
+{{--<footer>
     <div class="contain">
 
     </div>
---}}{{--</footer>--}}
+</footer>--}}
 
 <!-- Scripts -->
 

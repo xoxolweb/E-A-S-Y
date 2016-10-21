@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Bid;
-use App\User;
-use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Filesystem\Filesystem;
+
 
 class AdminController extends Controller
 {
@@ -50,11 +49,10 @@ class AdminController extends Controller
      * @param Request $request
      * @return string
      */
-    public function add(Request $request){
+    public function add(Request $request)    {
 
         $this->validate($request,[
             'title' => 'required|unique:bids',
-            'alias' => 'required',
             'city' => 'required',
             'region' => 'required',
             'category' => 'required',
@@ -69,20 +67,31 @@ class AdminController extends Controller
 
         ]);
 
+        $fs = new Filesystem();
+        $alias = str_slug($request->title);
+        $path = public_path()."/uploads/{$alias}/";
+        $make_result = $fs->makeDirectory($path,0777,true,true);
+        if($make_result) {
+            $images =  "/uploads/{$alias}/{$request->bigImage->getClientOriginalName()}";
+            $request->bigImage->move($path, $request->bigImage->getClientOriginalName());
 
-        $bid = new Bid();
+        }else{
+            $images = null;
+        }
         $info = $request->all();
 
+        $bid = new Bid();
 
         $bid->fill($info);
         $bid->autor = 'admin';
+        $bid->alias = $alias;
+        $bid->images = json_encode($images);
         $bid->save();
 
 
-        return redirect()->route('adminRoute');
+        return redirect()->route('adminAddNew')->with('message','saved');
+
     }
-
-
 
 
 

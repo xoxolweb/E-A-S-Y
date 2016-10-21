@@ -808,7 +808,7 @@ border-bottom: solid 1px #b5575f;
   align-self: center;
   padding-right: 115px;
   display: block;
-  padding-bottom: 8spx;
+  padding-bottom: 8px;
   font-size: 22px;
   text-align: center;
 }
@@ -881,7 +881,7 @@ border-bottom: solid 1px #b5575f;
   padding: 15px;
 }
 .body_about ul{
-  margin-left 10px;
+  margin-left:10px;
 }
 .body_about li{
   margin-left: 18px;

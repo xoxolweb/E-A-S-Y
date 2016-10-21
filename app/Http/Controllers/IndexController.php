@@ -19,8 +19,8 @@ class IndexController extends Controller
 
         $avg_price = $items->average('price');
         $slider_objs = $model::where('price','>',$avg_price)->get();
-        $seed = rand(0,count($slider_objs)-1);
-        $slider_obj = $slider_objs[$seed];
+
+
 
         foreach ($items as $item) {
             $cities[] = $item->city;
@@ -37,7 +37,7 @@ class IndexController extends Controller
         $sleep_places = array_unique($sleep_places);
 
         return view('site.main')->with(compact('items','cities','types','conditions',
-                                                'room_numbers','sleep_places','slider_obj'));
+                                                'room_numbers','sleep_places','slider_objs'));
     }
 
     public function category($category){

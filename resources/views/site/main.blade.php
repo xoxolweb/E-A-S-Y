@@ -4,12 +4,17 @@
     <!--- slider start -->
     <section class="slider">
         <div class="wraper_slider">
+            @foreach($slider_objs as $slider_obj)
             <div>
-                <img src="/public/img/bgslide.jpg" alt="">
+                @if($slider_obj->images != null)
+                    <img src="{{ json_decode($slider_obj->images) }}" alt="">
+                @else
+                    <img src="/public/img/bgslide.jpg" alt="">
+                @endif
                 <div class="element_slide">
                     <div>
                         <div class="bl_cent_categ">
-                            <p class="prise">${{ $slider_obj->price }}</p>
+                            <p class="prise">${{$slider_obj->price}}</p>
                             <a href="#" class="rent_text">Подробнее</a>
                         </div>
                         <div class="text_card">
@@ -19,22 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <img src="/public/img/bgslide.jpg" alt="">
-                <div class="element_slide">
-                    <div>
-                        <div class="bl_cent_categ">
-                            <p class="prise">$3580</p>
-                            <a href="#" class="rent_text">Подробнее</a>
-                        </div>
-                        <div class="text_card">
-                            <a href="#">Chatham St NW. Roanoke, VA 24012</a>
-                            <p>Lorem impsulm, insulim sulem malin tempo impsulm, insulim sulem malin tempo</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </section>
     <!--- slider end -->
@@ -186,7 +176,11 @@
                 <div class="sell_card">
                     <div class="head_card">
                         <a href="#">
-                            <img src="/public/img/template.jpg" alt="">
+                            @if($item->images != null)
+                            <img src="{{ json_decode($item->images) }}" alt="">
+                            @else
+                                <img src="/public/img/template.jpg" alt="">
+                            @endif
                         </a>
                         <div class="bl_cent_categ">
                             <p class="prise">${{$item->price}}</p>

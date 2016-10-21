@@ -8,7 +8,7 @@
     }
 </style>
 
-<form action="{{route('adminStore')}}" method="post" class="container">
+<form action="{{route('adminStore')}}" method="post" enctype="multipart/form-data" class="container">
         <div class="row">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -18,10 +18,17 @@
                         @endforeach
                     </ul>
                 </div>
+            @elseif(session('message'))
+                <div class="alert alert-success">
+                    <ul>
+
+                            <li>{{ session('message') }}</li>
+
+                    </ul>
+                </div>
             @endif
             <div class="col-md-4">
                 <label for="title">Title *</label> <input   id="title" type="text" name="title">
-                <label for="alias">Alias </label> <input  id="alias" type="text" name="alias">
                 <label for="city">City *</label> <input id="city" type="text" name="city">
                 <label for="region">Region *</label> <input   id="region" type="text" name="region">
             </div>
@@ -53,7 +60,8 @@
                 <label for="room_number">Number of rooms *</label> <input   id="room_number" type="text" name="room_number">
                 <label for="sleep_places">Number of sleeping places*</label> <input   id="sleep_places" type="text" name="sleep_places">
                 <label for="bath_places">Number of bath places*</label> <input   id="bath_places" type="text" name="bath_places">
-                <label for="images">Upload Photos</label> <input   id="images" type="file" name="images">
+                <label for="images">Big photo (1920x1080)</label> <input   id="images" type="file" name="bigImage"  accept="image/*">
+                <label for="images">Upload Photos (380*246)</label> <input   id="images" type="file" name="images" multiple accept="image/*">
             </div>
             <div class="col-md-3">
                 <label for="description">Description</label>
