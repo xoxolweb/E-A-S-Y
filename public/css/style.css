@@ -17,6 +17,7 @@ h3 {
 .contain {
     max-width: 1180px;
     margin: auto;
+    padding: 60px 0;
 }
 
 .top_header {
@@ -27,6 +28,7 @@ h3 {
 
 .top_header .contain {
     display: flex;
+    padding: 0 10px;
     background-color: #111;
     justify-content: flex-end;
 }
@@ -67,28 +69,22 @@ h3 {
 .social a:first-child>i {
     font-size: 14px;
 }
-
 .social .icon-fb, .social .icon-tw {
     padding-left: 9px;
     font-size: 16px;
 }
-
 .social a:last-child>i {
     font-size: 18px;
 }
-
 .social .icon-tw {
     font-size: 15px;
 }
-
 .social a:hover i {
     color: #fff;
 }
-
 .social a:hover {
     background-color: #b5575f;
 }
-
 .call_back a {
     display: block;
     width: 172px;
@@ -100,15 +96,12 @@ h3 {
     background-color: #b5575f;
     font: normal 18px/38px "MyriadPro", sans-serif;
 }
-
 .call_back {
     position: relative;
 }
-
 .call_back a p:last-child {
     display: none;
 }
-
 .call_back i {
     position: absolute;
     top: 10px;
@@ -120,6 +113,7 @@ h3 {
 .bot_header .contain {
     display: flex;
     height: 80px;
+    padding: 0 10px;
     justify-content: space-between;
 }
 
@@ -315,6 +309,7 @@ nav a:hover::after {
 
 .element_slide .text_card p {
     margin-bottom: 23px;
+    padding-top: 20px;
 }
 
 .element_slide {
@@ -329,19 +324,20 @@ nav a:hover::after {
 
 /*Блок категорий -------------------*/
 
-.filter {
-    padding: 0 0 60px 0;
+.filter .contain{
+    padding: 60px 0 60px 0;
 }
 
 .category_bl {
-    height: 500px;
+
     background-color: #eeeeee;
 }
 
 .category_bl .contain {
     display: flex;
-    padding: 95px 0;
     justify-content: space-between;
+    position:relative;
+    margin-top: -145px;
 }
 
 .category_bl .contain>div {
@@ -373,18 +369,23 @@ nav a:hover::after {
 .body_category:hover h2 {
     margin-top: 0;
     background-color: rgba(0, 0, 0, 0.2);
+   padding: 9px 0 23px;
+
 }
 
 .home_bl .body_category {
     background: url(../img/house.jpg) no-repeat;
+    background-size: cover;
 }
 
 .apartments_bl .body_category {
     background: url(../img/flat.jpg) no-repeat;
+      background-size: cover;
 }
 
 .offices_bl .body_category {
     background: url(../img/office.jpg) no-repeat;
+      background-size: cover;
 }
 
 .footer_category {
@@ -628,7 +629,7 @@ select::-ms-expand {
 .tab-content {
     position: relative;
     z-index: 10;
-    margin: -65px 0 0 0;
+
 }
 
 .clear_filter {
@@ -642,7 +643,18 @@ select::-ms-expand {
 .clear_filter i {
     margin-right: 10px;
     font-size: 22px;
+    position: relative;
 }
+.clear_filter i::after{
+  content: "";
+  position: absolute;
+  width: 122px;
+  height: 2px;
+  background-color: #b5575f;
+  bottom: 2px;
+  left: 0;
+}
+
 
 
 /*РЕЗУЛЬТАТ ЗАПРОСОВ БЛОК */
@@ -677,7 +689,6 @@ select::-ms-expand {
 
 .result_request_bl {
     width: 100%;
-    padding: 60px 0;
     background: #EFEFEF url(../img/bg-1.jpg) no-repeat center bottom;
 }
 
@@ -782,7 +793,6 @@ select::-ms-expand {
 
 .about_we_block {
     width: 100%;
-    padding: 60px 0 60px;
     background: #fcfdfd url(../img/bg-2.jpg) no-repeat bottom;
 }
 
@@ -1006,37 +1016,35 @@ select::-ms-expand {
 /*ABOUT CONTENT */
 
 .context_about {
-    margin-bottom: 50px;
     padding: 0 18px 0 18px;
     transition: .3s;
-    border: solid 1px #333;
+    border: solid 2px #dcdcdc;
 }
 
 .context_about:hover {
-    border: solid 1px #b5575f;
+    border: solid 2px #000;
 }
 
 .context_about.active_about {
-    border: solid 1px #b5575f;
+    border: solid 2px #000;
 }
 
 .context_about h1 {
     position: relative;
     display: inline-block;
     display: block;
-    padding: 20px 0 20px;
+    padding: 15px 0 15px;
     cursor: pointer;
     text-align: left;
     text-transform: uppercase;
     color: #323232;
-    font-family: "MyriadPro-Bold", sans-serif;
-    font-size: 38px;
+    font: bold 38px/42px "MyriadPro-Bold", sans-serif;
 }
 
 .context_about h1::after {
     position: absolute;
-    top: 17px;
-    right: 0;
+    top: 18px;
+    right: 3px;
     content: "+";
     transition: .3s;
     font-size: 35px;
@@ -1069,21 +1077,16 @@ select::-ms-expand {
     font-size: 17px;
     font-weight: bold;
 }
-
-
 /*FOOTER*/
-
 footer {
     width: 100%;
-    padding: 60px 0 100px;
+    padding-bottom: 40px;
     background-color: #000;
 }
-
 footer .contain {
     display: flex;
     justify-content: space-between;
 }
-
 .contact {
     display: flex;
     flex-direction: column;

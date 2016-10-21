@@ -10,7 +10,30 @@
   }
   .element_slide>div {
     margin-left: 10px;
+    width: 430px;
   }
+  .element_slide .text_card{
+    padding: 20px 10px 20px 20px;
+  }
+  /*category block*/
+  .category_bl .contain>div{
+    margin-right: 1px;
+  }
+}
+@media only screen and (max-width: 1170px) {
+  /*filter block*/
+.footer_for_bl > div{
+  margin-left: 0;
+}
+.head_price > div,
+.head_area_m > div{
+  margin-right: 10px;
+}
+#btn_g_rent{
+  margin-left: 0;
+  margin-top: 26px;
+  min-width: 125px;
+}
 }
 @media only screen and (max-width: 960px) {
   /*header*/
@@ -40,9 +63,45 @@
   .nav>a{
     display: flex;
   }
+  /*slider*/
+  .wraper_slider img,
+  .slider{
+    height: 500px;
+  }
+  .element_slide > div{
+    bottom: 100px;
+  }
+    /*category block*/
+    .category_bl .contain>div{
+      max-width: 300px;
+    }
+    .body_category{
+      height: 193px;
+    }
+    .footer_category a{
+      padding: 18px 0;
+      font-size: 14px;
+    }
+    .body_category h2{
+      margin-top: 65px;
+      padding: 0 0 3px;
+      font-size: 46px;
+    }
+    .category_bl .contain{
+      margin-top: -125px;
+      padding-bottom: 60px;
+    }
+    .body_category:hover h2 {
+       padding: 0 0 3px;
+    }
 
 }
 @media only screen and (max-width: 950px) {
+  /*category block*/
+.body_category h2{
+  font-size: 42px;
+}
+
 
   /*filter-----*/
 #give_rent,.button_category{
@@ -55,7 +114,6 @@
   float: right;
 }
 .tab-content{
-  margin-top: -95px;
   padding: 10px;
 }
 #give_rent_form{
@@ -137,7 +195,79 @@
   margin: 10px 0 10px;
 }
 }
+@media only screen and (max-width: 768px) {
+    /*slider*/
+  .wraper_slider img,
+  .slider{
+    height: 400px;
+  }
+  .element_slide > div{
+    width: 100%;
+  }
+  .element_slide .text_card{
+    padding: 10px;
+  }
+  .element_slide .text_card{
+    max-width: 768px;
+    width: 94%;
+  }
+  .element_slide .text_card a{
+    font-size: 22px;
+  }
+  .category_bl .contain{
+    padding: 20px 10px;
+  }
+/*category block*/
+.category_bl .contain{
+  flex-direction: column;
+  margin-top: 0;
+}
+.category_bl .contain>div{
+  max-width: 100%;
+  align-self: center;
+  margin-bottom: 20px;
+}
+.body_category{
+  height: 350px;
+}
+.footer_category a{
+  padding: 32px 0;
+  font-size: 20px;
+}
+.body_category h2{
+  margin-top: 145px;
+  padding: 15px 0 25px;
+  font-size: 50px;
+}
+.body_category:hover h2 {
+     padding: 15px 0 25px;
+}
+}
 @media only screen and (max-width: 560px) {
+  .contain{
+    padding: 50px 0;
+  }
+      /*slider*/
+      .wraper_slider img,
+      .slider{
+        height: 360px;
+      }
+  .element_slide .text_card{
+    max-width: 768px;
+    width: 92%;
+  }
+  .element_slide .text_card a{
+    font-size: 20px;
+  }
+  .element_slide .text_card p{
+    font-size: 14px;
+  }
+  .element_slide > div{
+    bottom: 90px;
+  }
+  .element_slide .bl_cent_categ{
+    font-size: 14px;
+  }
   /*Фильтер*/
 .header_filter{
   flex-direction: column;
