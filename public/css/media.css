@@ -42,11 +42,140 @@
   }
 
 }
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 950px) {
 
+  /*filter-----*/
+#give_rent,.button_category{
+  /*display: none;*/
 }
-@media only screen and (max-width: 1366px) {
-
+.button_category .buy_bt{
+  float: left;
+}
+.button_category .rent_bt{
+  float: right;
+}
+.tab-content{
+  margin-top: -95px;
+  padding: 10px;
+}
+#give_rent_form{
+  flex-wrap: wrap;
+}
+#give_rent_form>div{
+  width: 50%;
+}
+#give_rent_form select,
+#give_rent_form .city_form_bl select{
+  width: 95%;
+  align-self: center;
+}
+.tab-content input{
+  width: 92%;
+  align-self: center;
+}
+.footer_for_bl{
+  flex-direction: column;
+}
+.footer_for_bl input{
+  max-width: 100%;
+}
+.head_price>div{
+  width: 95%;
+  margin-right: 0;
+}
+.footer_for_bl > div,
+.body_area_m > input{
+  margin-left: 0;
+}
+.footer_for_bl{
+  padding-top: 0;
+}
+.footer_for_bl .area_hov{
+  width: 100%;
+}
+.footer_for_bl .roms_num_bl,
+.footer_for_bl .places_form_bl{
+  align-self: center;
+  width: 100%;
+}
+#rooms_num,
+#sleep_num{
+  width: 50%;
+  align-self: center;
+}
+#give_rent label{
+  text-align: center;
+}
+.roms_num_bl select,
+.footer_for_bl select{
+  max-width: 90%;
+}
+.footer_for_bl .places_form_bl{
+  align-self: center;
+}
+.head_price>input{
+  width: 87%;
+  align-self: center;
+  margin: 15px 13px 0 10px;
+}
+.body_area_m>input{
+  width: 92%;
+  align-self: center;
+  margin: 15px 17px 0 11px;
+}
+.footer_for_bl .body_area_m{
+  width: 100%;
+  margin-right: 0;
+}
+.rise_cent>input,
+.area_form_bl>input{
+  height: 5px;
+}
+#btn_g_rent{
+  width: 50%;
+  align-self: center;
+  margin: 10px 0 10px;
+}
+}
+@media only screen and (max-width: 560px) {
+  /*Фильтер*/
+.header_filter{
+  flex-direction: column;
+}
+.button_category{
+  align-self: center;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+.button_category .buy_bt,
+.button_category .rent_bt{
+  margin: 0;
+}
+.head_price>input{
+  width: 87%;
+  margin: 15px 8px 0 10px;
+}
+.body_area_m>input{
+  width: 92%;
+  margin: 15px 10px 0 10px;
+}
+}
+@media only screen and (max-width: 460px) {
+  #give_rent_form{
+    flex-direction: column;
+  }
+  #give_rent_form>div{
+    width: 100%;
+  }
+  #rooms_num,
+  #sleep_num{
+    width: 100%;
+  }
+  .roms_num_bl select,
+  .footer_for_bl select{
+    max-width: 100%;
+  }
 }
 @media only screen and (max-width: 1366px) {
 

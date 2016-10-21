@@ -29,7 +29,9 @@
         </div>
         <div class="bot_header">
             <div class="contain">
-                <div class="logo"><img src="../../public/img/logo.svg" alt=""></div>
+                <div class="logo">
+                    <a href=""><img src="../../public/img/logo.svg" alt="logo e-a-s-y"></a>
+                </div>
                 <div class="call_back">
                     <i class="icon-fh_head"></i>
                     <a href="tel:+0800759359">
@@ -38,15 +40,15 @@
                     </a>
                 </div>
                 <div class="nav">
-                  <a href="#">
-                    <i class="icon-menu"></i>
-                  </a>
-                <nav>
-                    <a href="#">Арендовать</a>
-                    <a href="#">Здать</a>
-                    <a href="#">Ваш отзыв</a>
-                    <a href="#">Контакты</a>
-                </nav>
+                    <a href="#">
+                        <i class="icon-menu"></i>
+                    </a>
+                    <nav>
+                        <a href="#">Арендовать</a>
+                        <a href="#">Здать</a>
+                        <a href="#">Ваш отзыв</a>
+                        <a href="#">Контакты</a>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -125,45 +127,46 @@
                     <h3>Мне нужно:</h3>
                     <div class="button_category">
                         <div class="buy_bt">
-                            <p class="icon-home_sale">Купить</p>
+                            <p class="icon-home_rent">Купить</p>
                         </div>
                         <div class="rent_bt">
-                            <p class="icon-home_sale">Арендовать</p>
+                            <p class="icon-key1">Арендовать</p>
                         </div>
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="give_rent">
                     <div id="give_rent_form">
                         <div class="city_form_bl">
-                            <label for="street">Город:</label>
+                            <label for="street">Любой</label>
                             <select class="dropdown" id="city">
                           <option value="">Город:</option>
                       </select>
                         </div>
                         <div class="row_st">
-                            <label for="street">Улица:</label><input class="input-sm" type="text" id='street' placeholder="street">
+                            <label for="street">Улица:</label><input class="input-sm" type="text" id='street' placeholder="Любая">
                         </div>
                         <div class="condition_bl">
                             <label for="condition">Состояние:</label>
                             <select id="condition">
-                          <option value="Любое"></option>
+                          <option value="Любое">Любое</option>
                       </select>
                         </div>
                         <div class="type_home">
                             <label for="type_home">Тип недвижимости:</label>
                             <select id="type_home">
-                          <option value="Любое"></option>
+                          <option value="Любое">Любой</option>
                       </select>
                         </div>
                     </div>
                     <div class="footer_for_bl">
+
                         <div class="head_price">
                             <div class="rent_fack">
                                 <div>
                                     <label for="price">Цена:</label>
-                                    <input class="input-sm" type="text" id="price_min" placeholder="price-min">
+                                    <input class="input-sm" type="text" id="price_min" placeholder="от">
                                 </div>
-                                <input class="input-sm" type="text" id="price_max" placeholder="price-max">
+                                <input class="input-sm" type="text" id="price_max" placeholder="до">
                             </div>
                             <input type="range" min="10" max="1000" step="10" class="input-sm" onchange="changeValue()" />
                         </div>
@@ -172,9 +175,9 @@
                                 <div class="body_area_m">
                                     <div>
                                         <label for="area">Площадь: </label>
-                                        <input id="area-min" class="input-sm" type="text" placeholder="area">
+                                        <input id="area-min" class="input-sm" type="text" placeholder="от">
                                     </div>
-                                    <input id="area-max" class="input-sm" type="text" placeholder="area">
+                                    <input id="area-max" class="input-sm" type="text" placeholder="до">
                                 </div>
                             </div>
                             <input type="range" min="10" max="1000" step="10" class="input-sm" onchange="changeValue()" />
@@ -182,17 +185,20 @@
                         <div class="roms_num_bl">
                             <label for="rooms_num">Кол. комнат:</label>
                             <select id="rooms_num">
-                              <option value="">rooms</option>
+                              <option value="">1</option>
                           </select>
                         </div>
                         <div class="places_form_bl">
                             <label for="ar">Спальных мест:</label>
                             <select id="sleep_num">
-                              <option value=""><?php echo $i?> sleep places</option>
+
+                              <option value=""><?php echo $i?> 3</option>
                           </select>
                         </div>
                         <button id="btn_g_rent">Арендовать</button>
+
                     </div>
+                    <a href="#" class="clear_filter"><i class="icon-latex"></i>Очистить</a>
                 </div>
                 <!-- <div role="tabpanel" class="tab-pane" id="sell">...</div>
             <div role="tabpanel" class="tab-pane" id="rent">...</div>
@@ -294,7 +300,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <section class="about_we_block">
@@ -382,39 +387,86 @@
                 <div class="reviews_bl">
                     <h3>нами довольны:</h3>
                     <div class="reviews_users">
-                      <div class="users_block">
-                        <div class="user_kard">
-                          <img src="../../public/img/feedback-face.png" alt="">
-                          <a href="">Андрей Филипов</a>
-                          <p>Покупатель</p>
-                          <i class="icon-feedback"></i>
-                          <p>Желаю процветания Вашей фирме,
-                            а сотрудникам - здоровья, терпения,
-                            бодрости и сил. Благодаря Вам,
-                            мы довольны на все 100%!</p>
+                        <div class="users_block">
+                            <div class="user_kard">
+                                <img src="../../public/img/feedback-face.png" alt="">
+                                <a href="">Андрей Филипов</a>
+                                <p>Покупатель</p>
+                                <i class="icon-feedback"></i>
+                                <p>Желаю процветания Вашей фирме, а сотрудникам - здоровья, терпения, бодрости и сил. Благодаря Вам, мы довольны на все 100%!</p>
+                            </div>
+                            <div class="user_kard">
+                                <img src="../../public/img/feedback-face.png" alt="">
+                                <a href="">Андрей Филипов</a>
+                                <p>Покупатель</p>
+                                <i class="icon-feedback"></i>
+                                <p>Желаю процветания Вашей фирме, а сотрудникам - здоровья, терпения, бодрости и сил. Благодаря Вам, мы довольны на все 100%!</p>
+                            </div>
                         </div>
-                        <div class="user_kard">
-                          <img src="../../public/img/feedback-face.png" alt="">
-                          <a href="">Андрей Филипов</a>
-                          <p>Покупатель</p>
-                          <i class="icon-feedback"></i>
-                          <p>Желаю процветания Вашей фирме,
-                            а сотрудникам - здоровья, терпения,
-                            бодрости и сил. Благодаря Вам,
-                            мы довольны на все 100%!</p>
-                        </div>
-                      </div>
                     </div>
                 </div>
 
             </div>
         </div>
     </section>
+    <section class="about_easy">
+        <div class="contain">
+            <div class="context_about">
+                <h1>АГЕНТСТВО НЕДВИЖИМОСТИ E-A-S-Y</h1>
+                <div class="body_about">
+                    <p>Возникла необходимость снять, купить квартиру в Киеве или области? Вы устали от постоянных поисков недвижимости в бескрайних просторах сети интернет? Хотели бы арендовать офис в Киеве за умеренную плату? В таком случае вы попали куда
+                        нужно!</p>
+                    <h4>Немного о нас</h4>
+                    <p>Агентство недвижимости E-A-S-Y – это штат опытных сотрудников, готовых сделать все, чтобы приобретаемая или арендуемая через нас недвижимость удовлетворяла самые высокие клиентские запросы. С нами Вы можете купить/продать/арендовать,
+                        либо сдать в аренду жилую или коммерческую недвижимость, а также земельные участки в пределах Киева и области.</p>
+                    <h4>Почему вам стоит обратить внимание на наши предложения?</h4>
+                    <ul>
+                        <li>Специально для простоты и объективности выбора мы разработали подробнейшую систему подбора предложений.</li>
+                        <li>Каждое объявление, касающееся продажи или сдачи в аренду проходит верификацию, в рамках которой специалисты компании проверяют благонадёжность клиента. Так, мы страхуем покупателей и арендаторов от любых рисков.</li>
+                        <li>Юридическое и материальное сопровождение сделок. Мы исповедуем современный тип сотрудничества, так называемого полного цикла. Это означает, что на наши плечи ложатся все заботы, связанные с составлением договоров, оформлением правоустанавливающих
+                            документов на недвижимость, получением разрешений в контролирующих инстанциях и органах.</li>
+                        <li>Каждый день, выполняя свою работу, мы руководствуемся исключительно интересами клиентов.</li>
+                    </ul>
+                    <h4>Что мы Вам предлагаем</h4>
+                    <ol>
+                        <li>Широкий охват класса недвижимости – от квартир, готовых к капитальному ремонту, до роскошных апартаментов в которые можно въезжать сразу же после покупки/аренды.</li>
+                        <li>Быстрый отклик на запрос, творческий подход к решению неординарных задач. Нередко бывает так, что нашим клиентам необходимо подыскать весьма специфическое здание с конкретными характеристиками. При выполнении столь сложных задач,
+                            мы не просим об отсрочке, а вместо этого подключаем все ресурсы, и добиваемся поставленной цели в установленный срок.</li>
+                        <li>Готовность меняться каждую секунду. Рынок столичной недвижимости весьма динамичен – то и дело возникают новые тренды, условия, обуславливающиеся воздействием внешних факторов: курсом валют, социальной, экономической, политической
+                            составляющей жизни государства. Благодаря постоянному мониторингу рынка, отслеживанию ключевых условий, нам удается предвидеть развитие ситуации, тем самым оградив наших клиентов от неприятных форс-мажоров.</li>
+                        <li>Предоставление полного спектра услуг, которые избавят Вас от обращения в несколько компаний. Наше агентство без труда окажет помощь при переезде: упаковка грузов, услуги грузчиков – доставим всё в целости и сохранности. Требуется
+                            чистка помещения, из которого выезжаете, либо въезжаете? Тогда наша услуга клининга придётся Вам по-душе: периодическая договорная чистка для постоянных клиентов, уборка после ремонта или строительства, а также чистка мебели
+                            и ковров, которая предполагает самовывоз и доставку обратно Вам уже очищенных изделий.</li>
+                    </ol>
+                    <p>Мы рады всем без исключения, будь Вы представителем компании, которая решила купить дом в Киеве с прицелом на будущее, или же владельцем однокомнатной квартиры на окраине столицы, который решил продать квартиру, чтобы отправиться в
+                        живописный поселок, расположенный где-нибудь на берегу Днепра.</p>
+                    <p>Агентство недвижимости E-A-S-Y – ваш надёжный партнёр и заботливый экономист в деле подбора только самых выгодных предложений покупки и аренды недвижимости на украинском рынке!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <footer>
         <div class="contain">
+            <div class="contact">
+                <p>Детали контактов</p>
+                <p>Офис: <a href="tel:+380800759359">0 800 759 359</a></p>
+                <p>Мобильный: <a href="tel:+380932739359">(093) 273-93-59</a></p>
+                <p>Мобильный: <a href="tel:+380672759359">(067) 275-93-59</a></p>
+                <p>Mail: <a href="mailto:support@e-a-s-y.in.ua">support@e-a-s-y.in.ua</a></p>
+            </div>
+            <div class="tags">
+                <p>Теги</p>
 
-
-
+            </div>
+            <div class="subscription">
+                <p>не пропустите</p>
+                <p>У нас для вас есть выгодное предложение, для подробной информации: </p>
+                <form action="">
+                    <input placeholder="Введите адрес электронной почты здесь" type="email">
+                    <input value=">" type="submit">
+                </form>
+            </div>
         </div>
     </footer>
     <script src="../../public/js/main.js"></script>
