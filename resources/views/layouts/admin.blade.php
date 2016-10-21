@@ -40,7 +40,7 @@
                 </a>
             </div>
             <nav>
-                <a href="/admin">Добавить</a>
+                <a href="{{ route('adminAddNew') }}">Добавить</a>
                 <a href="{{ route('adminEdit') }}">Редактировать</a>
 
                 <a href="{{ route('logout') }}"><b>Выйти</b></a>

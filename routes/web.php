@@ -23,8 +23,9 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 //admin
 Route::group(['prefix'=>'admin'],function(){
-    Route::post('/add','AdminController@add');
+    Route::post('/store','AdminController@add')->name('adminStore');
     Route::get('/edit','AdminController@edit')->name('adminEdit');
+    Route::get('/add','AdminController@add_new')->name('adminAddNew');
     Route::get('/', 'AdminController@index')->name('adminRoute');
 
     Route::get('/logout',function(){

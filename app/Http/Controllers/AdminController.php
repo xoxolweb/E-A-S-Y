@@ -23,8 +23,13 @@ class AdminController extends Controller
     public function index(){
 
 
-       return view('admin.panel');
 
+       return view('admin.panel');
+    }
+
+    public function add_new(){
+
+        return view('admin.add_new');
     }
 
     /**
@@ -53,7 +58,9 @@ class AdminController extends Controller
             'city' => 'required',
             'region' => 'required',
             'category' => 'required',
+            'type' =>'required',
             'price' => 'required|digits_between:1,10',
+            'area' => 'required|digits_between:1,10',
             'room_number' => 'required|digits_between:1,10',
             'sleep_places' => 'required|digits_between:1,10',
             'bath_places' => 'required|digits_between:1,10',
