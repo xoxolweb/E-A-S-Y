@@ -598,7 +598,7 @@ border-bottom: solid 1px #b5575f;
 }
 .text_card{
   padding-left: 15px;
-  width: 380px;
+  width: 365px;
   background-color: #fff;
   padding-top: 15px;
 }
@@ -609,8 +609,10 @@ border-bottom: solid 1px #b5575f;
 .text_card>p{
   color: #959595;
   line-height: 21px;
-  padding-top: 7px;
+  padding-top: 5px;
   height: 50px;
+  line-height: 25px;
+  overflow: hidden;
 }
 .about_card{
   display: flex;
@@ -621,7 +623,7 @@ border-bottom: solid 1px #b5575f;
 }
 .about_card:after{
   content: "";
-  width: 90%;
+  width: 95%;
   height: 1px;
   position: absolute;
   left: 0;
@@ -1006,6 +1008,7 @@ footer .contain{
 }
 .kategory_card .sell_card{
     max-width: 270px;
+    max-height: 380px;
   }
 .kategory_card .sell_card img{
   width: 100%;
@@ -1022,9 +1025,40 @@ footer .contain{
 }
 .kategory_card .sell_card .text_card>p{
   font-size: 14px;
+  height: 90px;
+  line-height: 20px;
 }
-
-
+/*employee*/
+.employees_slider{
+  background-color: #fff;
+  padding: 30px;
+}
+.employees_slider h6{
+  margin-bottom: 10px;
+  display: block;
+}
+.employee{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.employee img{
+  width: 230px;
+  align-self: center;
+  height: 230px;
+}
+.employee p{
+  padding-left: 35px;
+  color: #b5b5b5;
+  font-size: 14px;
+  padding-top: 15px;
+}
+.employee p:last-child{
+  font-size: 16px;
+  padding-top: 8px;
+  color: #323232;
+  text-transform: uppercase;
+}
 
 .right_bl_kategory{
   width: 300px;
