@@ -19,7 +19,9 @@ h3 {
     margin: auto;
     padding: 60px 0;
 }
-
+body{
+  min-width: 320px;
+}
 .top_header {
     width: 100%;
     height: 40px;
@@ -98,6 +100,9 @@ h3 {
 }
 .call_back {
     position: relative;
+}
+.call_back p{
+  line-height: 42px;
 }
 .call_back a p:last-child {
     display: none;
@@ -191,7 +196,6 @@ nav a:hover::after {
 
 .slick-list.dragging {
     cursor: pointer;
-    cursor: hand;
 }
 
 .slick-slider .slick-track, .slick-slider .slick-list {
@@ -445,7 +449,7 @@ nav a:hover::after {
 }
 
 .tab-content input, #give_rent_form .city_form_bl select, #rooms_num, .places_form_bl select, #give_rent_form select {
-    width: 200px;
+    width: 250px;
     height: 45px;
     margin: 10px 0;
     padding: 0 0 0 10px;
@@ -469,9 +473,7 @@ select {
     text-indent: 0.01px;
     text-overflow: '';
     color: #bebebe;
-    background-image: url(../img/1.png);
-    background-repeat: no-repeat;
-    background-position: right center;
+    background: url(../img/1.png) no-repeat right center;
     line-height: 1em;
     -webkit-appearance: none;
     /* for FF */
@@ -519,7 +521,6 @@ select::-ms-expand {
     display: flex;
     flex-direction: column;
 }
-
 .tab-pane .body_area_m {
     display: flex;
     flex-direction: row;
@@ -601,7 +602,7 @@ select::-ms-expand {
 .buy_bt, .rent_bt {
     width: 193px;
     margin-right: 20px;
-    padding: 24px 0 6px;
+    padding: 28px 0 6px;
     cursor: pointer;
     transition: .2s;
     background: linear-gradient(0deg, #e3e3e3 0%, white 100%);
@@ -629,7 +630,6 @@ select::-ms-expand {
 .tab-content {
     position: relative;
     z-index: 10;
-
 }
 
 .clear_filter {
@@ -661,10 +661,11 @@ select::-ms-expand {
 
 .sell_card {
     max-width: 380px;
+    width: 380px;
     margin-bottom: 20px;
     transition: .3s;
     border-bottom: solid 1px transparent;
-    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.09);
 }
 
 .sell_card:hover {
@@ -702,7 +703,7 @@ select::-ms-expand {
 }
 
 .head_card img {
-    width: 380px;
+    width: 100%;
     height: 246px;
 }
 
@@ -727,7 +728,6 @@ select::-ms-expand {
 }
 
 .text_card {
-    width: 365px;
     padding-top: 15px;
     padding-left: 15px;
     background-color: #fff;
@@ -743,7 +743,6 @@ select::-ms-expand {
     height: 50px;
     padding-top: 5px;
     color: #959595;
-    line-height: 21px;
     line-height: 25px;
 }
 
@@ -813,7 +812,7 @@ select::-ms-expand {
     padding: 18px;
     color: #969696;
     background-color: #fff;
-    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.12);
     justify-content: space-between;
 }
 
@@ -922,7 +921,7 @@ select::-ms-expand {
 }
 
 .choice_bl .onchoice h5::after {
-    content: "↓";
+    content: "↑";
     transform: rotate(360deg);
 }
 
@@ -976,7 +975,7 @@ select::-ms-expand {
 .user_kard i {
     display: block;
     padding-right: 115px;
-    padding-bottom: 8spx;
+    padding-bottom: 8px;
     text-align: center;
     font-size: 22px;
     align-self: center;
@@ -1031,7 +1030,6 @@ select::-ms-expand {
 
 .context_about h1 {
     position: relative;
-    display: inline-block;
     display: block;
     padding: 15px 0 15px;
     cursor: pointer;
@@ -1051,7 +1049,7 @@ select::-ms-expand {
 }
 
 .context_about.active_about h1::after {
-    content: "↓";
+    content: "↑";
     transform: rotate(360deg);
 }
 
@@ -1139,10 +1137,12 @@ footer .contain {
 
 .subscription form input:last-child {
     position: absolute;
-    top: 0;
+    top: -2px;
+      background-image: url(../img/1.png);
     right: 50px;
-    width: 40px;
-    height: 40px;
+    transform: rotate(-90deg);
+    width: 42px;
+    height: 44px;
     cursor: pointer;
     color: #adadad;
     border: none;
@@ -1153,8 +1153,6 @@ footer .contain {
 .subscription p {
     line-height: 20px;
 }
-
-
 /*OBJECT страница 2+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
 .top_background {
@@ -1214,8 +1212,7 @@ footer .contain {
 .form_filter_cat input{
   height: 40px;
   width: 100%;
-  margin: auto;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
   padding-left: 5px;
   color: #959595;
   border: solid 1px #ececec;
