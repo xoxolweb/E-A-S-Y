@@ -5,7 +5,11 @@ $('.choice_bl>div h5').on('click',function(){
   $(this).parent().toggleClass('onchoice')
 })
 //slider
-var arrElem=['.wraper_slider','.users_block','.employees_bl']
+var arrElem=['.wraper_slider','.users_block','.employees_bl'];
+
+if(($(document).width()-11)<=768){
+  arrElem.push('.employee')
+}
 function setSlidElem(arr){
   for(var i=0;i<arr.length;i++){
     $(arr[i]).slick({
