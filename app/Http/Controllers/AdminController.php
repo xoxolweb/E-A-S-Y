@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bid;
-
+use App\Specialist;
 use Illuminate\Http\Request;
 use Illuminate\Filesystem\Filesystem;
 
@@ -27,8 +27,10 @@ class AdminController extends Controller
     }
 
     public function add_new(){
+        $spec = new Specialist();
+        $list = $spec::all();
 
-        return view('admin.add_new');
+        return view('admin.add_new')->with(compact('list'));
     }
 
     /**

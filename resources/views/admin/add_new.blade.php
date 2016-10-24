@@ -5,6 +5,10 @@
 <style>
     label{
         display: block;
+        width:100% !important;
+    }
+    select{
+        width:100% !important
     }
 </style>
 
@@ -28,43 +32,48 @@
                 </div>
             @endif
             <div class="col-md-4">
-                <label for="title">Title *</label> <input   id="title" type="text" name="title">
-                <label for="city">City *</label> <input id="city" type="text" name="city">
-                <label for="region">Region *</label> <input   id="region" type="text" name="region">
+                <label for="title">Заголовок</label> <input   id="title" type="text" name="title">
+                <label for="city">Город</label> <input id="city" type="text" name="city">
+                <label for="region">Расположение</label> <input   id="region" type="text" name="region">
+                <label for="type">Специалист</label>
+                <select id="type" name="type">
+                    @foreach($list as $spec)
+                    <option value="{{$spec->id}}">{{$spec->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="col-md-4">
-                <label for="type">Category</label>
+                <label for="type">Тип недвижимости</label>
                     <select id="type" name="type">
-
-                        <option>Buy</option>
-                        <option>Sell</option>
-                        <option>Rent</option>
-                        <option>Give Rent</option>
+                        <option>Купить</option>
+                        <option>Продать</option>
+                        <option>Арендовать</option>
+                        <option>Сдать в Аренду</option>
                     </select>
-                <label for="category">Category</label>
+                <label for="category">Категория</label>
                     <select id="category" name="category">
-                        <option>Flats</option>
-                        <option>Houses</option>
-                        <option>Lands</option>
-                        <option>Offices</option>
+                        <option>Квартиры</option>
+                        <option>Дома</option>
+                        <option>Земельные участки</option>
+                        <option>Оффисы</option>
                     </select>
-                <label for="condition">Condition</label>
+                <label for="condition">Состояние</label>
                     <select id="condition" name="condition">
-                        <option>Best</option>
-                        <option>Good</option>
-                        <option>Normal</option>
-                        <option>Bad</option>
+                        <option>Отличное</option>
+                        <option>Хорошее</option>
+                        <option>Нормальное</option>
+                        <option>Плохое</option>
                     </select>
-                <label for="price">Price *</label> <input   id="price" type="text" name="price">
-                <label for="area">Area *</label> <input   id="area" type="text" name="area">
-                <label for="room_number">Number of rooms *</label> <input   id="room_number" type="text" name="room_number">
-                <label for="sleep_places">Number of sleeping places*</label> <input   id="sleep_places" type="text" name="sleep_places">
-                <label for="bath_places">Number of bath places*</label> <input   id="bath_places" type="text" name="bath_places">
-                <label for="images">Big photo (1920x1080)</label> <input   id="images" type="file" name="bigImage"  accept="image/*">
-                <label for="images">Upload Photos (380*246)</label> <input   id="images" type="file" name="images" multiple accept="image/*">
+                <label for="price">Цена</label> <input   id="price" type="text" name="price">
+                <label for="area">Площадь</label> <input   id="area" type="text" name="area">
+                <label for="room_number">Количество комнат</label> <input   id="room_number" type="text" name="room_number">
+                <label for="sleep_places">Количество спальных мест</label> <input   id="sleep_places" type="text" name="sleep_places">
+                <label for="bath_places">Количество ванных</label> <input   id="bath_places" type="text" name="bath_places">
+                <label for="images">Фото</label> <input   id="images" type="file" name="bigImage"  accept="image/*">
+                {{--<label for="images">Upload Photos (380*246)</label> <input   id="images" type="file" name="images" multiple accept="image/*">--}}
             </div>
             <div class="col-md-3">
-                <label for="description">Description</label>
+                <label for="description">Описание</label>
                 <textarea rows="5"  cols="40" id="description" name="description"></textarea>
                 <hr>
                 <label for="other">Additional information</label>
@@ -75,13 +84,9 @@
             </div>
             {{csrf_field()}}
         </div>
-     <button id="send" type = "submit" class="btn btn-primary">Send</button>
+     <button id="send" type = "submit" class="btn btn-primary">Сохранить</button>
 
  </form>
-{{--
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
---}}
- {{--<script src="../../../public/js/admin-script.js"></script>--}}
 
 
 @endsection

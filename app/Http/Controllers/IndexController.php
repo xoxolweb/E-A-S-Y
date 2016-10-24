@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Specialist;
 use Illuminate\Http\Request;
 use App\Bid;
 use App\Http\Requests;
@@ -16,8 +17,9 @@ class IndexController extends Controller
 
 
         $model = new Bid();
-
+        $spec = new Specialist();
         $items = $model::all();
+        $list = $spec::all();
 
 
         $avg_price = $items->average('price');
@@ -40,8 +42,11 @@ class IndexController extends Controller
         $sleep_places = array_unique($sleep_places);
 
 
+
+
         return view('site.main')->with(compact('items','cities','types','conditions',
-                                                'room_numbers','sleep_places','slider_objs'));
+                                                'room_numbers','sleep_places','slider_objs',
+                                                'list'));
     }
     public function filter(Request $filter =  null)
     {

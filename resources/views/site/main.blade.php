@@ -187,22 +187,23 @@
             <div class="employee_block">
                 <h3>наши Сотрудники</h3>
                 <div class="employee">
+                    @foreach($list as $spec)
                     <div class="user">
-                        <img src="../../public/img/employees.jpg" alt="">
+
+                        <img src="{{json_decode($spec->photo)}}" alt="">
                         <div class="about_user">
                             <p>Риелтор</p>
-                            <span>Иван </span>
+                            <span>{{$spec->name}}</span>
                             <p>Сотрудник агентства, который предоставляет услуги в сфере недвижимости.</p>
+                            <p>
+                                @foreach(json_decode($spec->phone) as $phone)
+                                   <li>{{$phone}}</li>
+                                 @endforeach
+                            </p>
                         </div>
+
                     </div>
-                    <div class="user">
-                        <img src="../../public/img/employees.jpg" alt="">
-                        <div class="about_user">
-                            <p>Риелтор</p>
-                            <span>Иван </span>
-                            <p>Сотрудник агентства, который предоставляет услуги в сфере недвижимости.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="about_we">
