@@ -17,9 +17,13 @@
 
     <script src=" /public/libs/jquery-2.2.4.min.js"></script>
     <script src=" /public/libs/slick.min.js"></script>
+
 </head>
 
 <body>
+<script>
+    csrfToken = '<? print csrf_token()?>';
+</script>
 <!--- header -> start --->
 <header>
 <div class="top_header">
@@ -60,6 +64,7 @@
 </header>
 <!--- header -> end --->
         @yield('content')
+        @yield('filter')
 <!--- footer -> start --->
 <footer>
     <div class="contain">

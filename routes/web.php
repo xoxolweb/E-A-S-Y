@@ -35,9 +35,9 @@ Route::group(['prefix'=>'admin'],function(){
 });
 //site
 Route::group(['prefix'=>'{category}'],function(){
-    Route::get('/{detail}','IndexController@detail');
     Route::get('/','IndexController@category');
 });
+Route::post('/filter','IndexController@filter')->name('filter');
 
 Route::get('/', 'IndexController@index')->name('main');
 Route::any('/register','IndexController@index');

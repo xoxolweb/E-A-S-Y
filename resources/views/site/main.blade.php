@@ -129,9 +129,9 @@
                                 <div class="body_area_m">
                                     <div>
                                         <label for="area">Площадь: </label>
-                                        <input id="area-min" class="input-sm" type="text" placeholder="от">
+                                        <input id="area_min" class="input-sm" type="text" placeholder="от">
                                     </div>
-                                    <input id="area-max" class="input-sm" type="text" placeholder="до">
+                                    <input id="area_max" class="input-sm" type="text" placeholder="до">
                                 </div>
                             </div>
                             <input type="range" min="10" max="1000" step="10" class="input-sm" onchange="changeValue()" />
@@ -165,45 +165,21 @@
             </div>
          </div>
     </section>
-    <!-- serch result-->
+
+    <!-- filter end -->
+    <!-- search result-->
     <section class="result_request_bl">
         <div class="contain">
             <div class="header_request">
                 <h3>По вашему запросу</h3>
             </div>
             <div class="result_filter">
-            @foreach($items as $item)
-                <div class="sell_card">
-                    <div class="head_card">
-                        <a href="#">
-                            @if($item->images != null)
-                            <img src="{{ json_decode($item->images) }}" alt="">
-                            @else
-                                <img src="/public/img/template.jpg" alt="">
-                            @endif
-                        </a>
-                        <div class="bl_cent_categ">
-                            <p class="prise">${{$item->price}}</p>
-                            <a href="#" class="rent_text">{{$item->category}}</a>
-                        </div>
-                    </div>
-                    <div class="text_card">
-                        <a href="#">{{$item->city}},{{$item->region}}</a>
-                        <p>{{$item->description}}</p>
-                        <div class="about_card">
-                            <p>Площадь:{{$item->area}}</p>
-                            <div class="bed_shower">
-                                <p class="icon-bed">{{$item->sleep_places}}</p>
-                                <p class="icon-wash">{{$item->bed_places}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                 @include('site.filter_results',['items'=>$items])
             </div>
         </div>
     </section>
-    <!-- filter end -->
+
+
 
     <!-- about start -->
     <section class="about_we_block">
