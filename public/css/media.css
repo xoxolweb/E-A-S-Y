@@ -1,182 +1,636 @@
-
-@media only screen and (max-width: 1366px) {
-
-}
+@media only screen and (max-width: 1366px) {}
 
 @media only screen and (max-width: 1200px) {
-  .contain{
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-  .element_slide>div {
-    margin-left: 10px;
-  }
+    .contain {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .element_slide>div {
+        margin-left: 10px;
+        width: 430px;
+    }
+    .element_slide .text_card {
+        padding: 20px 10px 20px 20px;
+    }
+    /*category block*/
+    .category_bl .contain>div {
+        margin-right: 1px;
+    }
+    /*filter result*/
+    .sell_card {
+      width: 32%;
+    }
 }
+
+@media only screen and (max-width: 1170px) {
+    /*filter block*/
+    .footer_for_bl>div {
+        margin-left: 0;
+    }
+    .head_price>div, .head_area_m>div {
+        margin-right: 10px;
+    }
+    #btn_g_rent {
+        margin-left: 0;
+        margin-top: 26px;
+        min-width: 125px;
+    }
+    .tab-content input, #give_rent_form .city_form_bl select, #rooms_num, .places_form_bl select, #give_rent_form select {
+        width: 200px;
+    }
+    /*filter result*/
+    .sell_card {
+      width: 32%;
+    }
+    /*ABOUT WE*/
+    .about_we > div{
+      margin-right: 2px;
+    }
+    /*FOOTER*/
+    .subscription form input:last-child{
+      right: 1px;
+    }
+}
+@media only screen and (max-width: 1050px) {
+  /*filter result*/
+  .sell_card {
+    width: 31.6%;
+  }
+
+
 @media only screen and (max-width: 960px) {
-  /*header*/
-  .call_back a{
-    height: 60px;
-    width: 140px;
+  body{
+    font-size: 14px;
   }
-  .call_back>a p:first-child{
-    display: none;
-  }
-  .call_back i{
+  h3{
     font-size: 30px;
-    margin-top: 5px;
   }
-  .call_back>a p:last-child{
-    display: block;
-    line-height: 58px;
-    padding-left: 20px;
-    font-size: 18px;
+  .context_about h1,  .context_about h1::after{
+    font-size: 30px;
   }
-  nav{
-    display: none;
+  .context_about h1::after{
+    top: 12px;
   }
-  .bot_header .contain{
-    height: 110px;
-  }
-  .nav>a{
-    display: flex;
-  }
+    /*header*/
+    .call_back a {
+        height: 60px;
+        width: 140px;
+    }
+    .call_back>a p:first-child {
+        display: none;
+    }
+    .call_back i {
+        font-size: 30px;
+        margin-top: 5px;
+    }
+    .call_back>a p:last-child {
+        display: block;
+        line-height: 58px;
+        padding-left: 20px;
+        font-size: 18px;
+    }
+    nav {
+        display: none;
+    }
+    .bot_header .contain {
+        height: 110px;
+    }
+    .nav>a {
+        display: flex;
+    }
+    /*slider*/
+    .wraper_slider img, .slider {
+        height: 500px;
+    }
+    .element_slide>div {
+        bottom: 100px;
+    }
+    /*category block*/
+    .category_bl .contain>div {
+        max-width: 300px;
+    }
+    .body_category {
+        height: 193px;
+    }
+    .footer_category a {
+        padding: 18px 0;
+        font-size: 14px;
+    }
+    .body_category h2 {
+        margin-top: 65px;
+        padding: 0 0 3px;
+        font-size: 46px;
+    }
+    .category_bl .contain {
+        margin-top: -125px;
+        padding-bottom: 60px;
+    }
+    .body_category:hover h2 {
+        padding: 0 0 3px;
+    }
+    /*filter result*/
+    .sell_card {
+      width: 100%;
+      max-width: 300px;
+    }
+    .result_filter {
+      display: flex;
+      justify-content: space-between;
+    }
+    .result_filter .sell_card{
+      margin-right: 0;
+    }
+    .text_card > a{
+      font-size: 16px;
+    }
+    .text_card > p{
+      font-size: 14px;
+    }
+    .text_card .about_card{
+      font-size: 14px;
+    }
+    .sell_card .bl_cent_categ{
+      font-size: 14px
+    }
+    /*USERS*/
+    .user{
+      max-width: 460px;
+      padding-right: 5px;
+    }
+    /*ABOUT WE*/
+    .about_we > div{
+      max-width: 300px;
+    }
 
 }
+
 @media only screen and (max-width: 950px) {
+    /*category block*/
+    .body_category h2 {
+        font-size: 42px;
+    }
+    /*filter-----*/
+    #give_rent, .button_category {
+        /*display: none;*/
+    }
+    .button_category .buy_bt {
+        float: left;
+    }
+    .button_category .rent_bt {
+        float: right;
+    }
+    .tab-content {
+        padding: 10px;
+    }
+    #give_rent_form {
+        flex-wrap: wrap;
+    }
+    #give_rent_form>div {
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .head_price, .area_form_bl {
+        margin-bottom: 15px;
+    }
+    .rent_fack, .head_area_m {
+        margin-bottom: 5px;
+    }
+    .roms_num_bl, .places_form_bl {
+        margin-bottom: 10px;
+    }
+    #give_rent_form select, #give_rent_form .city_form_bl select {
+        width: 95%;
+        align-self: center;
+    }
+    .tab-content input {
+        width: 92%;
+        align-self: center;
+    }
+    .head_price .rent_fack>input, .head_area_m .body_area_m>input {
+        align-self: flex-end;
+        max-width: 50%;
+    }
+    .head_area_m .body_area_m>input {
+        align-self: center;
+    }
+    .head_price .rent_fack, .body_area_m>div {
+        width: 99%;
+    }
+    .rent_fack>input {
+        margin-left: 8px;
+        margin-right: 0;
+    }
+    .rent_fack>div {
+        width: 100%;
+    }
+    .footer_for_bl {
+        flex-direction: column;
+    }
+    .footer_for_bl input {
+        max-width: 100%;
+    }
+    .head_price>div {
+        width: 95%;
+        margin-right: 0;
+    }
+    .footer_for_bl>div, .body_area_m>input {
+        margin-left: 0;
+    }
+    .footer_for_bl {
+        padding-top: 0;
+    }
+    .footer_for_bl .area_hov {
+        width: 100%;
+    }
+    .footer_for_bl .roms_num_bl, .footer_for_bl .places_form_bl {
+        align-self: center;
+        width: 100%;
+    }
+    #rooms_num, #sleep_num {
+        width: 50%;
+        align-self: center;
+    }
+    #give_rent label {
+        text-align: center;
+    }
+    .roms_num_bl select, .footer_for_bl select {
+        max-width: 90%;
+    }
+    .footer_for_bl .places_form_bl {
+        align-self: center;
+    }
+    .head_price>input {
+        width: 87%;
+        align-self: center;
+        margin: 15px 13px 0 10px;
+    }
+    .body_area_m>input {
+        width: 92%;
+        align-self: center;
+        margin: 15px 6px 0 9px;
+    }
+    .footer_for_bl .body_area_m {
+        width: 100%;
+        margin-right: 0;
+    }
+    .rise_cent>input, .area_form_bl>input {
+        height: 5px;
+    }
+    #btn_g_rent {
+        width: 50%;
+        align-self: center;
+        margin: 10px 0 10px;
+    }
+    /*filter result*/
+    .sell_card {
+      width: 100%;
+      max-width: 49%;
+    }
+}
+@media only screen and (max-width: 860px) {
+  /*ABOUT WE*/
+  .about_we{
+    flex-direction: column;
+  }
+  .about_we > div{
+    max-width: 100%;
+    padding-top: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+    /*slider*/
+    .wraper_slider img, .slider {
+        height: 400px;
+    }
+    .element_slide>div {
+        width: 100%;
+    }
+    .element_slide .text_card {
+        padding: 10px;
+    }
+    .element_slide .text_card {
+        max-width: 768px;
+        width: 94%;
+    }
+    .element_slide .text_card a {
+        font-size: 22px;
+    }
+    .category_bl .contain {
+        padding: 20px 10px;
+    }
+    /*category block*/
+    .category_bl .contain {
+        flex-direction: column;
+        margin-top: 0;
+    }
+    .category_bl .contain>div {
+        max-width: 100%;
+        align-self: center;
+        margin-bottom: 20px;
+    }
+    .body_category {
+        height: 350px;
+    }
+    .footer_category a {
+        padding: 32px 0;
+        font-size: 20px;
+    }
+    .body_category h2 {
+        margin-top: 145px;
+        padding: 15px 0 25px;
+        font-size: 50px;
+    }
+    .body_category:hover h2 {
+        padding: 15px 0 25px;
+    }
+    /*Filter*/
+    #give_rent label {
+        text-align: left;
+        padding-left: 12px;
+    }
+    .header_filter h3 {
+        margin-right: 10%;
+        font-size: 24px;
+    }
+    #give_rent .roms_num_bl label, #give_rent .places_form_bl label {
+        text-align: center;
+    }
+    .footer_for_bl {
+        margin-bottom: 30px;
+    }
+    .clear_filter {
+        position: relative;
+        align-self: flex-end;
 
-  /*filter-----*/
-#give_rent,.button_category{
-  /*display: none;*/
+    }
+    /*filter result*/
+    .head_card{
+      height: 180px;
+    }
+    .head_card img{
+      height: 180px;
+    }
+    /*ABOUT SEO E-A-S-Y*/
+    .context_about h1{
+      padding: 10px 15px 10px 0;
+      font-size: 27px;
+    }
+    .about_easy .contain{
+      padding: 40px 10px 60px;
+    }
+    .context_about h1::after{
+      top: 7px;
+    }
+    /*USERS*/
+    .user{
+      max-width: 100%;
+      padding-right: 15px;
+    }
+    .user img{
+      float: left;
+      margin-right: 10px;
+    }
+    .employee{
+      width: 95%;
+      margin: auto;
+      position: relative;
+      height: 233px;
+      box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.12);
+    }
+    .employee .slick-next,
+    .employee .slick-prev{
+      position: absolute;
+      height: 25px;
+      width: 25px;
+      right: 20px;
+      top: 10px;
+      cursor: pointer;
+      z-index: 100;
+      border-radius: 0;
+      border: 2px solid #b5575f;
+    }
+    .employee .slick-prev{
+      right: 60px;
+    }
+
+    /*FOOTER*/
+    footer .contain{
+    flex-wrap: wrap;
+    }
+    footer .contain>div{
+      width: 49%;
+      max-width: 49%;
+      padding-bottom: 30px;
+    }
+    footer .contain>div:last-child{
+      width: 100%;
+      max-width: 100%;
+      padding-bottom: 0;
+    }
+    .subscription form input:first-child{
+      width: 95%;
+    }
+    .subscription form input:last-child{
+      background-image: url(../img/1.png);
+      right: 0;
+      top: -1px;
+    }
 }
-.button_category .buy_bt{
-  float: left;
-}
-.button_category .rent_bt{
-  float: right;
-}
-.tab-content{
-  margin-top: -95px;
-  padding: 10px;
-}
-#give_rent_form{
-  flex-wrap: wrap;
-}
-#give_rent_form>div{
-  width: 50%;
-}
-#give_rent_form select,
-#give_rent_form .city_form_bl select{
-  width: 95%;
-  align-self: center;
-}
-.tab-content input{
-  width: 92%;
-  align-self: center;
-}
-.footer_for_bl{
-  flex-direction: column;
-}
-.footer_for_bl input{
-  max-width: 100%;
-}
-.head_price>div{
-  width: 95%;
-  margin-right: 0;
-}
-.footer_for_bl > div,
-.body_area_m > input{
-  margin-left: 0;
-}
-.footer_for_bl{
-  padding-top: 0;
-}
-.footer_for_bl .area_hov{
-  width: 100%;
-}
-.footer_for_bl .roms_num_bl,
-.footer_for_bl .places_form_bl{
-  align-self: center;
-  width: 100%;
-}
-#rooms_num,
-#sleep_num{
-  width: 50%;
-  align-self: center;
-}
-#give_rent label{
-  text-align: center;
-}
-.roms_num_bl select,
-.footer_for_bl select{
-  max-width: 90%;
-}
-.footer_for_bl .places_form_bl{
-  align-self: center;
-}
-.head_price>input{
-  width: 87%;
-  align-self: center;
-  margin: 15px 13px 0 10px;
-}
-.body_area_m>input{
-  width: 92%;
-  align-self: center;
-  margin: 15px 17px 0 11px;
-}
-.footer_for_bl .body_area_m{
-  width: 100%;
-  margin-right: 0;
-}
-.rise_cent>input,
-.area_form_bl>input{
-  height: 5px;
-}
-#btn_g_rent{
-  width: 50%;
-  align-self: center;
-  margin: 10px 0 10px;
-}
-}
+
 @media only screen and (max-width: 560px) {
-  /*Фильтер*/
-.header_filter{
-  flex-direction: column;
+    .contain {
+        padding: 50px 10px;
+    }
+    /*slider*/
+    .wraper_slider img, .slider {
+        height: 360px;
+    }
+    .element_slide .text_card {
+        max-width: 768px;
+        width: 92%;
+    }
+    .element_slide .text_card a {
+        font-size: 20px;
+    }
+    .element_slide .text_card p {
+        font-size: 14px;
+    }
+    .element_slide>div {
+        bottom: 90px;
+    }
+    .element_slide .bl_cent_categ {
+        font-size: 14px;
+    }
+    /*Фильтер*/
+    .header_filter {
+        flex-direction: column;
+    }
+    .button_category {
+        align-self: center;
+        width: 100%;
+        margin-top: 10px;
+        justify-content: space-around;
+    }
+    .button_category .buy_bt, .button_category .rent_bt {
+        margin: 0;
+    }
+    .head_price>input {
+        width: 87%;
+        margin: 15px 8px 0 10px;
+    }
+    .body_area_m>input {
+        width: 92%;
+        margin: 15px 10px 0 10px;
+    }
+    .header_filter h3 {
+        margin-right: 0;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    /*category block*/
+    .body_category {
+        height: 300px;
+    }
+    .body_category h2 {
+        margin-top: 110px;
+        font-size: 60px;
+        padding: 10px 0 13px;
+    }
+    .body_category:hover h2 {
+        padding: 10px 0 13px;
+        font-size: 60px;
+    }
+    .footer_category a {
+        padding: 32px 0;
+        font-size: 20px;
+    }
+/*filter result*/
+.text_card > a{
+  font-size: 14px;
+  line-height: 15px;
 }
-.button_category{
-  align-self: center;
-  width: 100%;
-  margin-top: 10px;
-  justify-content: space-around;
+.text_card > p{
+  font-size: 12px;
+  line-height: 14px;
 }
-.button_category .buy_bt,
-.button_category .rent_bt{
-  margin: 0;
+.text_card .bout_card p{
+  font-size: 12px;
 }
-.head_price>input{
-  width: 87%;
-  margin: 15px 8px 0 10px;
+.head_card img, .head_card {
+   height: 140px;
 }
-.body_area_m>input{
-  width: 92%;
-  margin: 15px 10px 0 10px;
+.sell_card .prise,.sell_card  .rent_text{
+  padding: 5px 10px;
+}
+.text_card > p{
+  height: 38px;
+}
+.text_card .about_card {
+    font-size: 10px;
+
+}
+}
+@media only screen and (max-width: 480px) {
+/*filter result*/
+  .head_card img, .head_card {
+     height: 220px;
+  }
+  .result_filter{
+    flex-direction: column;
+  }
+  .sell_card {
+    width: 100%;
+    align-self: center;
+    max-width: 100%;
+}
+.text_card > a{
+  font-size: 16px;
+  line-height: 18px;
+}
+.text_card > p{
+  font-size: 14px;
+  line-height: 16px;
+}
+.sell_card .prise,.sell_card  .rent_text{
+  padding: 12px 20px;
+}
+.text_card > p{
+  height: 38px;
+}
+.text_card .about_card {
+    font-size: 14px;
+}
+.about_card{
+
+}
+.bed_shower{
+  float: right;
+  width: 60%;
 }
 }
 @media only screen and (max-width: 460px) {
-  #give_rent_form{
-    flex-direction: column;
-  }
-  #give_rent_form>div{
-    width: 100%;
-  }
-  #rooms_num,
-  #sleep_num{
-    width: 100%;
-  }
-  .roms_num_bl select,
-  .footer_for_bl select{
-    max-width: 100%;
-  }
+    #give_rent_form {
+        flex-direction: column;
+    }
+    #give_rent_form>div {
+        width: 100%;
+    }
+    #rooms_num, #sleep_num {
+        width: 100%;
+    }
+    .roms_num_bl select, .footer_for_bl select {
+        max-width: 100%;
+    }
+    /*FILTER*/
+    .tab-content .header_filter h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .clear_filter {
+        align-self: center;
+        margin-left: 60px;
+    }
+    /*filter result*/
+    .footer_category a{
+      font-size: 18px;
+    }
 }
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 400px) {
+/*FOOTER*/
+footer .contain{
+flex-wrap: nowrap;
+flex-direction: column;
+}
+footer .contain>div{
+  width: 97%;
+  max-width: 97%;
+}
+footer .contain>div:last-child{
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 0;
+}
+.subscription form input:first-child{
+  width: 94%;
+}
+.subscription form input:last-child{
+  right: -3px;
+}
+}
+@media only screen and (max-width: 360px) {
+  .bed_shower{
+    float: right;
+    width: 52%;
+  }
+  /*filter result*/
+  .body_category{
+    height: 240px;
+  }
+  .body_category h2 {
+    margin-top: 80px;
+  }
+  .footer_category a{
+    padding: 25px 0;
+  }
 
 }

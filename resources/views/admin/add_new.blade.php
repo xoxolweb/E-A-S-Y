@@ -36,7 +36,7 @@
                 <label for="city">Город</label> <input id="city" type="text" name="city">
                 <label for="region">Расположение</label> <input   id="region" type="text" name="region">
                 <label for="type">Специалист</label>
-                <select id="type" name="type">
+                <select id="spec" name="spec">
                     @foreach($list as $spec)
                     <option value="{{$spec->id}}">{{$spec->name}}</option>
                     @endforeach

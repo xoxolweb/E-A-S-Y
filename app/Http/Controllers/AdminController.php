@@ -59,6 +59,7 @@ class AdminController extends Controller
             'region' => 'required',
             'category' => 'required',
             'type' =>'required',
+            'specialist' => 'reqired',
             'price' => 'required|digits_between:1,10',
             'area' => 'required|digits_between:1,10',
             'room_number' => 'required|digits_between:1,10',

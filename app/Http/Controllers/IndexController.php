@@ -58,6 +58,7 @@ class IndexController extends Controller
             $wheres = "";
 
             if (isset($filter->city) && $filter->city != '') $wheres .= "`city` = '{$filter->city}' and ";
+            if (isset($filter->category) && $filter->category != '') $wheres .= "`category` LIKE '{$filter->category}' and ";
             if (isset($filter->region) && $filter->region != '') $wheres .= "`region` LIKE '{$filter->region}' and ";
             if (isset($filter->condition) && $filter->condition != 'Любое') $wheres .= "`condition` = '{$filter->condition}' and ";
             if (isset($filter->type) && $filter->type != 'Любое') $wheres .= "`type` = '{$filter->type}' and ";
@@ -81,8 +82,48 @@ class IndexController extends Controller
     }
     public function category($category){
 
+        $bids = new Bid();
 
-        return view('site.category')->with($category);
+        $items = $bids::all();
+
+
+
+        switch (strtolower($category)) {
+            case 'buy':  {
+                $items = $bids::where('category','LIKE','Купить')->get();
+                $cat_name = 'Купить';
+            }
+                break;
+            case 'rent': {
+                $items = $bids::where('category','LIKE','Арендовать')->get();
+                $cat_name = 'Арендовать';
+            }
+                break;
+            default : {
+                $items = $bids::all();
+                $cat_name = 'Все';
+            }
+        }
+
+        foreach ($items as $item) {
+            $cities[] = $item->city;
+            $conditions[] = $item->condition;
+            $types[] = $item->type;
+            $room_numbers[] = $item->room_number;
+            $sleep_places[] = $item->sleep_places;
+        }
+
+        $cities = array_unique($cities);
+        $types = array_unique($types);
+        $conditions = array_unique($conditions);
+        $room_numbers = array_unique($room_numbers);
+        $sleep_places = array_unique($sleep_places);
+
+
+
+        return view('site.category')->with(compact('items','cat_name','cities',
+                'types','conditions','room_numbers','sleep_places'
+            ));
     }
 
     public function detail($category,$id){
