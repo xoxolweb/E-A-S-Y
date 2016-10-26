@@ -12,7 +12,7 @@
     }
 </style>
 
-<form action="{{route('adminStore')}}" method="post" enctype="multipart/form-data" class="container">
+<form action="{{route('adminStoreObj')}}" method="post" enctype="multipart/form-data" class="container">
         <div class="row">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">

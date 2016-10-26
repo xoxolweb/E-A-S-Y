@@ -1,6 +1,8 @@
 @extends('layouts.app')
-
+<title>Агентство недвижимости E-A-S-Y</title>
+<meta name="description" content="Агентство недвижимости E-A-S-Y - купить, арендовать, продать, квартиру, дом, офис, земельный участок в Киеве и Киевской области  0 800 759 359" />
 @section('content')
+
     <!--- slider start -->
     <section class="slider">
         <div class="wraper_slider">
@@ -15,7 +17,7 @@
                     <div>
                         <div class="bl_cent_categ">
                             <p class="prise">${{$slider_obj->price}}</p>
-                            <a href="#" class="rent_text">Подробнее</a>
+                            <a href="/{{$slider_obj->cat_alias}}/{{$slider_obj->alias}}" class="rent_text">Подробнее</a>
                         </div>
                         <div class="text_card">
                             <a href="#">{{$slider_obj->city}},{{$slider_obj->region}}</a>
@@ -33,30 +35,30 @@
     <section class="category_bl">
         <div class="contain">
             <div class="home_bl">
-                <a href="#" class="body_category">
+                <a href="/houses" class="body_category">
                     <h2>Дома</h2>
                 </a>
                 <div class="footer_category">
-                    <a href="#">Аренда</a>
-                    <a href="#">Продажа</a>
+                    <a href="/rent">Аренда</a>
+                    <a href="/buy">Продажа</a>
                 </div>
             </div>
             <div class="apartments_bl">
-                <a href="#" class="body_category">
+                <a href="/flats" class="body_category">
                     <h2>Квартиры</h2>
                 </a>
                 <div class="footer_category">
-                    <a href="#">Аренда</a>
-                    <a href="#">Продажа</a>
+                    <a href="/rent">Аренда</a>
+                    <a href="/buy">Продажа</a>
                 </div>
             </div>
             <div class="offices_bl">
-                <a href="#" class="body_category">
+                <a href="/offices" class="body_category">
                     <h2>Офисы</h2>
                 </a>
                 <div class="footer_category">
-                    <a href="#">Аренда</a>
-                    <a href="#">Продажа</a>
+                    <a href="/rent">Аренда</a>
+                    <a href="/buy">Продажа</a>
                 </div>
 
             </div>

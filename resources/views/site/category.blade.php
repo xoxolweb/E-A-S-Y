@@ -1,5 +1,16 @@
 @extends('layouts.app')
 
+    @if($category == 'rent')
+      <title>Аренда недвижимости в Киеве и Киевской области - агентство недвижимости E-A-S-Y</title>
+      <meta name="description" content="Аренда недвижимости в Киеве и Киевской области, снять недвижимость под Киевом. Реальные фото, лучшие цены.  0 800 759 359" />
+      <meta name="keywords" content="аренда недвижимости, снять квартиру, аренда офиса, ареда склада, аренда магазина, агентство недвижимости киев, агентство недвижимости, easy, e-a-s-y, изи, киев, украина" />
+    @endif
+     @if($category == 'buy')
+      <title>Купить недвижимость в Киеве - Продажа недвижимости под Киевом: АН E-A-S-Y</title>
+      <meta name="description" content="Купить недвижимость в Киеве и Киевской области, продажа недвижимости под Киевом, реальные фото, лучшие цены" />
+      <meta name="keywords" content="недвижимость, недвижимость киев ,агентства недвижимости, недвижимость в киеве, продажа недвижимости, куплю недвижимость, купить недвижимость, аренда недвижимости, киевская недвижимость, агентство недвижимости киев, агентство недвижимости, easy, e-a-s-y, изи, киев, укр" />
+     @endif
+
 @section('content')
 
     <!-- Top Background -->
@@ -9,13 +20,36 @@
     <div class="bread_crumbs">
         <div class="contain">
             <div class="speedbar">
-                <span class="first_speed"><a href="#">Агентство недвижимости E-A-S-Y</a><span>&rArr;</span></span>
-                <span><a href="#">{{$cat_name}}</a></span>
+                <span class="first_speed"><a href="{{route ('main')}}">Агентство недвижимости E-A-S-Y</a><span>&rArr;</span></span>
+                <span><a href="/{{$category}}">{{$cat_name}}</a></span>
             </div>
         </div>
     </div>
     <!--Category-->
     <section class="body_block_category">
+        <section class="category_bl">
+            <div class="contain">
+                <div class="home_bl">
+                    <a href="/houses" class="body_category">
+                        <h2>Дома</h2>
+                    </a>
+
+                </div>
+                <div class="apartments_bl">
+                    <a href="/flats" class="body_category">
+                        <h2>Квартиры</h2>
+                    </a>
+
+                </div>
+                <div class="offices_bl">
+                    <a href="/offices" class="body_category">
+                        <h2>Офисы</h2>
+                    </a>
+
+
+                </div>
+            </div>
+        </section>
         <div class="contain">
             <div class="category_card">
                 @include('site.filter_results',['items'=>$items])
@@ -69,16 +103,13 @@
                 <div class="employees_slider">
                     <h6>НАШИ СПЕЦИАЛИСТЫ</h6>
                     <div class="employees_bl">
+                        @foreach($spec as $specialist)
                         <div class="emplo_card_slid">
-                            <img src="../../public/img/specialist-face.png" alt="specialist-face">
+                            <img src="{{json_decode($specialist->photo)}}" alt="specialist-face">
                             <p>Риелтор</p>
-                            <p>Георгий</p>
+                            <p>{{$specialist->name}}</p>
                         </div>
-                        <div class="emplo_card_slid">
-                            <img src="../../public/img/specialist-face.png" alt="specialist-face">
-                            <p>Риелтор</p>
-                            <p>Георгий</p>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="reviews_users">

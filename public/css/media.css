@@ -20,6 +20,34 @@
     .sell_card {
       width: 32%;
     }
+    /*OBJECT RESULT*/
+    .body_block_category .sell_card{
+      margin: 0  0 20px 0;
+    }
+    .body_block_category .category_card{
+      display: flex;
+      justify-content:space-between;
+    }
+    .body_block_category .category_card .sell_card{
+      width: 49%;
+      max-width: 49%;
+    }
+    .body_block_category .category_card .text_card{
+        width: 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+    .body_block_category .sell_card img,
+    .body_block_category .sell_card .head_card{
+      height: 220px;
+    }
+    .body_block_category .text_card>p,
+    .body_block_category .text_card>a,
+    .body_block_category .about_card>p{
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+
 }
 
 @media only screen and (max-width: 1170px) {
@@ -56,8 +84,6 @@
   .sell_card {
     width: 31.6%;
   }
-
-
 @media only screen and (max-width: 960px) {
   body{
     font-size: 14px;
@@ -67,11 +93,25 @@
   }
   .context_about h1,  .context_about h1::after{
     font-size: 30px;
+    padding: 10px 0 10px;
   }
   .context_about h1::after{
-    top: 12px;
+    top: 0;
+  }
+  /*social*/
+  .social a,
+  .social a:last-child{
+    border: none;
+    color: #fff;
+    margin-left: 25px;
   }
     /*header*/
+    .logo{
+      flex-grow: 2;
+    }
+    .call_back{
+      margin-right: 20px;
+    }
     .call_back a {
         height: 60px;
         width: 140px;
@@ -91,9 +131,49 @@
     }
     nav {
         display: none;
+        position: absolute;
+        background-color: #fff;
+        z-index: 10000;
+        right: 0;
+        width: 230px;
+        top: 150px;
+        height: 355px;
+        padding-top: 45px;
+        border-bottom: solid 1px #b5575f;
+        border-left: solid 1px #b5575f;
+    }
+    .active_nav{
+      border-bottom: solid 1px #b5575f;
+    }
+    nav a{
+      display: block;
+      text-align: center;
+      font-size: 24px;
+      margin: 0 0 14px 0;
+      padding: 5px;
+    }
+    nav a:focus,
+    nav a:hover{
+      color: #fff;
+      background-color: #b5575f;
     }
     .bot_header .contain {
         height: 110px;
+    }
+    .nav{
+      background-color: #b5575f;
+      border-radius: 5px;
+      transition: .3s;
+    }
+    .nav i{
+      color: #fff;
+      transition: .3s;
+    }
+    .active_nav .nav{
+        background-color: #fff;
+    }
+    .active_nav .nav i{
+      color: #b5575f;
     }
     .nav>a {
         display: flex;
@@ -133,6 +213,9 @@
       width: 100%;
       max-width: 300px;
     }
+    #give_rent{
+    margin-top: 10px;
+}
     .result_filter {
       display: flex;
       justify-content: space-between;
@@ -161,9 +244,30 @@
     .about_we > div{
       max-width: 300px;
     }
-
+    /*OBJECT RESULT*/
+    .form_filter_cat button{
+      width: 40%;
+      align-self: center;
+    }
+    .body_block_category .form_filter_cat select{
+      width: 70%;
+      align-self: flex-start;
+      margin-bottom: 15px;
+    }
+    .body_block_category #sleep_num{
+        width: 70%;
+    }
+    .body_block_category .prise_category,
+    .body_block_category  .area_category {
+    width: 70%;
+    align-self: center;
 }
-
+.body_block_category .prise_category input,
+.body_block_category .area_category input {
+    width: 50%;
+    margin-bottom: 15px;
+}
+}
 @media only screen and (max-width: 950px) {
     /*category block*/
     .body_category h2 {
@@ -171,7 +275,7 @@
     }
     /*filter-----*/
     #give_rent, .button_category {
-        /*display: none;*/
+        display: none;
     }
     .button_category .buy_bt {
         float: left;
@@ -250,6 +354,9 @@
         width: 50%;
         align-self: center;
     }
+    .right_bl_category #sleep_num{
+      width: 100%;
+    }
     #give_rent label {
         text-align: center;
     }
@@ -286,6 +393,47 @@
       width: 100%;
       max-width: 49%;
     }
+    /*OBJECT RESULT*/
+
+    .body_block_category .category_card .sell_card{
+      width: 32%;
+      max-width: 32%;
+    }
+    .category_card {
+      max-width: 100%;
+    }
+    .body_block_category .category_card .text_card{
+        margin-right: 0;
+    }
+    .body_block_category .contain {
+    flex-direction: column;
+    }
+
+    .body_block_category .right_bl_category{
+      display: flex;
+      max-width: 100%;
+      justify-content: space-between;
+      padding-left: 0;
+    }
+    .body_block_category .employees_slider,
+    .body_block_category .reviews_users{
+      max-width: 47%;
+    }
+
+    .wraper_filter{
+      width: 0;
+      display: none;
+    }
+    .body_block_category .form_filter_cat{
+      padding: 20px;
+    }
+    .body_block_category .employees_slider{
+      padding: 20px;
+      align-self: flex-start;
+    }
+    .body_block_category .reviews_users{
+      align-self: flex-start;
+    }
 }
 @media only screen and (max-width: 860px) {
   /*ABOUT WE*/
@@ -296,6 +444,7 @@
     max-width: 100%;
     padding-top: 50px;
   }
+  /*OBJECT RESULT*/
 }
 @media only screen and (max-width: 768px) {
     /*slider*/
@@ -351,6 +500,31 @@
     .header_filter h3 {
         margin-right: 10%;
         font-size: 24px;
+        width: 100%;
+    }
+ .button_category {
+    padding-top: 10px;
+}
+.button_category .rent_bt {
+    float: right;
+}
+.button_category .buy_bt{
+  margin-left: 10px;
+  margin-right: 0;
+}
+ .button_category .rent_bt {
+    margin: 0;
+}
+.wraper_imeg{
+  max-width: 400px;
+  width: 400px;
+  display: block;
+}
+.footer_slider_obj>div{
+  width: 180px;
+}
+    .header_filter {
+        flex-direction: column;
     }
     #give_rent .roms_num_bl label, #give_rent .places_form_bl label {
         text-align: center;
@@ -358,10 +532,13 @@
     .footer_for_bl {
         margin-bottom: 30px;
     }
+    .img_obj>div{
+      width: 800px;
+      height: 500px;
+    }
     .clear_filter {
         position: relative;
-        align-self: flex-end;
-
+        float: right;
     }
     /*filter result*/
     .head_card{
@@ -378,9 +555,7 @@
     .about_easy .contain{
       padding: 40px 10px 60px;
     }
-    .context_about h1::after{
-      top: 7px;
-    }
+
     /*USERS*/
     .user{
       max-width: 100%;
@@ -435,12 +610,29 @@
       right: 0;
       top: -1px;
     }
-}
+    /*OBJECT RESULT*/
 
+    .body_block_category .category_card .sell_card{
+      width: 49%;
+      max-width: 49%;
+    }
+}
 @media only screen and (max-width: 560px) {
     .contain {
         padding: 50px 10px;
     }
+    /*NAV*/
+    nav {
+        height: 315px;
+    }
+    .call_back > a p:last-child{
+      display: none;
+    }
+    .call_back a {
+      width: 60px;
+      padding: 0;
+    }
+
     /*slider*/
     .wraper_slider img, .slider {
         height: 360px;
@@ -465,15 +657,7 @@
     .header_filter {
         flex-direction: column;
     }
-    .button_category {
-        align-self: center;
-        width: 100%;
-        margin-top: 10px;
-        justify-content: space-around;
-    }
-    .button_category .buy_bt, .button_category .rent_bt {
-        margin: 0;
-    }
+
     .head_price>input {
         width: 87%;
         margin: 15px 8px 0 10px;
@@ -485,7 +669,6 @@
     .header_filter h3 {
         margin-right: 0;
         font-size: 24px;
-        margin-bottom: 10px;
     }
     /*category block*/
     .body_category {
@@ -567,6 +750,13 @@
   float: right;
   width: 60%;
 }
+
+    .button_category .buy_bt,
+    .button_category .rent_bt{
+      float: none;
+      margin-left: 10px;
+      margin-top: 10px;
+}
 }
 @media only screen and (max-width: 460px) {
     #give_rent_form {
@@ -621,6 +811,19 @@ footer .contain>div:last-child{
   .bed_shower{
     float: right;
     width: 52%;
+  }
+
+  .nav>a{
+    height: 50px;
+    width: 50px;
+  }
+    .call_back a{
+      width: 52px;
+      height: 52px;
+    }
+  .call_back i{
+    left: 5px;
+    top: 5px;
   }
   /*filter result*/
   .body_category{

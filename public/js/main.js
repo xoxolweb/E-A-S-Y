@@ -36,22 +36,9 @@ $('.accordion>div h5').on('click',function(){
 $('.slick-slider .slick-next').text('>');
 $('.slick-slider .slick-prev').text('<');
 
+// heddin's art
 
-// $('.slidett').slick({
-//  slidesToShow: 1,
-//  slidesToScroll: 1,
-//  arrows: false,
-//  fade: true,
-//  asNavFor: '.navtt'
-// });
-// $('.navtt').slick({
-//   slidesToShow: 5,
-//   slidesToScroll: 1,
-//   asNavFor: '.slidett',
-//   dots: true,
-//   centerMode: true,
-//   focusOnSelect: true
-// });
+
 function filter_main() {
 
 
@@ -155,7 +142,23 @@ function _main(){
 
   var btn_give_rent = $('#btn_g_rent');
   var btn_search = $('#search');
+  var btn_objs = $('#objs');
+  var btn_specs = $('#specs');
 
+
+  btn_objs.click(
+    function(){
+       $('.objs').collapse('toggle');
+
+    }
+  );
+  btn_specs.click(
+    function(){
+
+      $('.specs').collapse('toggle');
+
+    }
+  );
   btn_search.click(filter_category);
   btn_give_rent.click(filter_main);
 

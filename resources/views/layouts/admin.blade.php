@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>E-A-S-Y \ Admin</title>
     <link rel="stylesheet" href="/public/css/reset.css">
-    <link rel="stylesheet" href=" /public/css/fonts.css">
-    <link rel="stylesheet" href=" /public/css/style.css">
-    <link rel="stylesheet" href=" /public/css/media.css">
+    <link rel="stylesheet" href="/public/css/fonts.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/media.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script type="javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -41,9 +41,11 @@
             </div>
             <div class="nav">
             <nav>
-                <a href="{{ route('adminAddNew') }}">Добавить</a>
-                <a href="{{ route('adminEdit') }}">Редактировать</a>
-
+                <span style="background-color: #cccccc;">
+                    <a href="{{ route('adminRoute') }}">Панель</a>
+                    <a href="{{ route('adminAddNew') }}">Добавить Объект</a>
+                    <a href="{{ route('adminAddSpec') }}">Добавить Специалиста</a>
+                </span>
                 <a href="{{ route('logout') }}"><b>Выйти</b></a>
             </nav>
             </div>

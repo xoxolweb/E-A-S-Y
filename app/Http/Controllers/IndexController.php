@@ -24,7 +24,10 @@ class IndexController extends Controller
 
         $avg_price = $items->average('price');
         $slider_objs = $model::where('price','>',$avg_price)->get();
-
+        foreach ($slider_objs as $slider_obj) {
+            if ($slider_obj->category == 'Купить') $slider_obj->cat_alias = 'buy';
+            if ($slider_obj->category == 'Арендовать') $slider_obj->cat_alias = 'rent';
+        }
 
 
         foreach ($items as $item) {
@@ -33,6 +36,8 @@ class IndexController extends Controller
             $types[] = $item->type;
             $room_numbers[] = $item->room_number;
             $sleep_places[] = $item->sleep_places;
+            if ($item->category == 'Купить') $item->cat_alias = 'buy';
+            if ($item->category == 'Арендовать') $item->cat_alias = 'rent';
         }
 
         $cities = array_unique($cities);
@@ -51,6 +56,8 @@ class IndexController extends Controller
     public function filter(Request $filter =  null)
     {
         $model_filter = new Bid();
+
+
 
         if (isset($filter)) {
 
@@ -77,18 +84,21 @@ class IndexController extends Controller
                 $items = $model_filter::all();
             }
         }
+        foreach($items as $item){
+            if ($item->category == 'Купить') $item->cat_alias = 'buy';
+            if ($item->category == 'Арендовать') $item->cat_alias = 'rent';
+        }
 
         return view('site.filter_results')->with(compact('items'));
     }
     public function category($category){
 
         $bids = new Bid();
-
-        $items = $bids::all();
-
+        $spec = Specialist::all();
 
 
         switch (strtolower($category)) {
+
             case 'buy':  {
                 $items = $bids::where('category','LIKE','Купить')->get();
                 $cat_name = 'Купить';
@@ -100,8 +110,8 @@ class IndexController extends Controller
             }
                 break;
             default : {
-                $items = $bids::all();
-                $cat_name = 'Все';
+                    $items = $bids::all();
+                    $cat_name = 'Все';
             }
         }
 
@@ -111,6 +121,8 @@ class IndexController extends Controller
             $types[] = $item->type;
             $room_numbers[] = $item->room_number;
             $sleep_places[] = $item->sleep_places;
+            if ($item->category == 'Купить') $item->cat_alias = 'buy';
+            if ($item->category == 'Арендовать') $item->cat_alias = 'rent';
         }
 
         $cities = array_unique($cities);
@@ -122,13 +134,30 @@ class IndexController extends Controller
 
 
         return view('site.category')->with(compact('items','cat_name','cities',
-                'types','conditions','room_numbers','sleep_places'
+                'types','conditions','room_numbers','sleep_places','category','spec'
             ));
     }
 
-    public function detail($category,$id){
+    public function detail($category,$alias){
 
+        $bid= new Bid();
+        switch (strtolower($category)) {
 
-        return view('site.detail')->with(compact('category','id'));
+            case 'buy': {
+                $item = $bid::whereRaw("`category` LIKE 'Купить' and `alias` LIKE '{$alias}'")->first();
+                $spec = Specialist::find($item->specialist_id);
+               // $spec->phones = (array)json_decode($spec->phone);
+                return view('site.detail')->with(compact('item','category','spec'));
+            }
+                break;
+            case 'rent': {
+                $item = $bid::whereRaw("`category` LIKE 'Арендовать' and `alias` LIKE '{$alias}'")->first();
+                $spec = Specialist::find($item->specialist_id);
+                return view('site.detail')->with(compact('item','category','spec'));
+            }
+                break;
+            default:
+                break;
+        }
     }
 }

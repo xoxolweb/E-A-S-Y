@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>E-A-S-Y</title>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <meta name="description" content="Описание страницы сайта." />
-    <meta name="keywords" content="ключевые слова" />
     <link rel="stylesheet" href="/public/css/reset.css">
     <link rel="stylesheet" href=" /public/css/fonts.css">
     <link rel="stylesheet" href=" /public/css/style.css">
@@ -39,7 +35,7 @@
 <div class="bot_header">
     <div class="contain">
         <div class="logo">
-            <a href=""><img src="../../public/img/logo.svg" alt="logo e-a-s-y"></a>
+            <a href="{{route('main')}}"><img src="/public/img/logo.svg" alt="logo e-a-s-y"></a>
         </div>
         <div class="call_back">
             <i class="icon-fh_head"></i>
@@ -53,8 +49,8 @@
                 <i class="icon-menu"></i>
             </a>
             <nav>
-                <a href="#">Арендовать</a>
-                <a href="#">Здать</a>
+                <a href="/rent">Арендовать</a>
+                <a href="#">Сдать</a>
                 <a href="#">Ваш отзыв</a>
                 <a href="#">Контакты</a>
             </nav>

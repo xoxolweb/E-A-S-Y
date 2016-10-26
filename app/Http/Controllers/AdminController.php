@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Bid;
 use App\Specialist;
+
 use Illuminate\Http\Request;
 use Illuminate\Filesystem\Filesystem;
 
@@ -23,14 +24,23 @@ class AdminController extends Controller
 
 
 
-       return view('admin.panel');
+       $bids = Bid::paginate(1);
+       $specs = Specialist::paginate(3);
+
+       return view('admin.panel')->with(compact('bids','specs'));
     }
 
     public function add_new(){
+
         $spec = new Specialist();
         $list = $spec::all();
 
         return view('admin.add_new')->with(compact('list'));
+    }
+    public function add_spec(){
+
+
+        return view('admin.add_spec');
     }
 
     /**
@@ -51,7 +61,7 @@ class AdminController extends Controller
      * @param Request $request
      * @return string
      */
-    public function add(Request $request)    {
+    public function store_obj(Request $request)    {
 
         $this->validate($request,[
             'title' => 'required|unique:bids',
@@ -93,6 +103,51 @@ class AdminController extends Controller
 
 
         return redirect()->route('adminAddNew')->with('message','saved');
+
+    }
+    public function store_spec(Request $request)    {
+
+        $this->validate($request,[
+            'name' => 'required|unique:specialists',
+        ]);
+
+        if(empty($request->email))
+            $request->email = 'e-a-s-y@i.ua';
+        if(empty($request->mob))
+            $request->mob = '(093) 273-93-59';
+        if(empty($request->of_tel))
+            $request->of_tel = ' 0 800 759 359';
+
+
+        $fs = new Filesystem();
+        $alias = str_slug($request->name);
+        $path = public_path()."/uploads/employees/{$alias}/";
+        $make_result = $fs->makeDirectory($path,0777,true,true);
+        if($make_result) {
+            $image =  "/uploads/employees/{$alias}/{$request->photo->getClientOriginalName()}";
+            $request->photo->move($path, $request->photo->getClientOriginalName());
+
+        }else{
+            $image = '/public/img/employees.jpg';
+        }
+
+
+        $info = $request->all();
+        $spec = new Specialist();
+
+
+
+        $phone = new \stdClass();
+        $phone->mob = $request->mob;
+        $phone->office = $request->of_tel;
+
+        $info['phone'] = json_encode($phone);
+        $info['photo'] = json_encode($image);
+        $spec->fill($info);
+        $spec->save();
+
+
+        return redirect()->route('adminAddSpec')->with('message','saved');
 
     }
 
