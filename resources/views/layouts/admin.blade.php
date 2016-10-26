@@ -12,10 +12,21 @@
     <link rel="stylesheet" href="/public/css/media.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script type="javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <!-- Custom CSS -->
+    <link href="/public/css/simple-sidebar.css" rel="stylesheet">
     <script src=" /public/libs/jquery-2.2.4.min.js"></script>
     <script src=" /public/libs/slick.min.js"></script>
 </head>
+<style>
+    .logo img{
+        max-width: 250px;
+        max-height: 65px;
+        margin-left: -50px;
+    }
+    .contain{
+        max-width:95%;
+    }
+</style>
 
 <body>
 <header>
@@ -31,7 +42,10 @@
     </div>
     <div class="bot_header">
         <div class="contain">
-            <div class="logo"><img src=" /public/img/logo.svg" alt=""></div>
+            <div class="logo">
+                <img src=" /public/img/logo.svg" href="#menu-toggle" class="btn btn-default" id="menu-toggle" alt="">
+                {{--<a href="#menu-toggle" class="btn btn-primary" id="menu-toggle">Menu</a>--}}
+            </div>
             <div class="call_back">
                 <i class="icon-fh_head"></i>
                 <a href="tel:+0800759359">
@@ -52,8 +66,15 @@
         </div>
     </div>
 </header>
+<div id="wrapper">
+    @include('admin.sidebar')
+    <div id="page-content-wrapper">
+            <div class="container-fluid">
+                @yield('content')
+            </div>
+    </div>
+</div>
 
-        @yield('content')
 
 {{--<footer>
     <div class="contain">
@@ -65,6 +86,5 @@
 
 <script src="/public/js/main.js"></script>
 <script src="/public/js/app.js"></script>
-
 </body>
 </html>

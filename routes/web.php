@@ -21,6 +21,9 @@ Auth::routes();
 Route::group(['prefix'=>'admin'],function(){
     Route::post('store-object','AdminController@store_obj')->name('adminStoreObj');
     Route::post('store-spec','AdminController@store_spec')->name('adminStoreSpec');
+    Route::get('categories','AdminController@show_categories')->name('adminCats');
+    Route::get('objects','AdminController@show_objects')->name('adminObjects');
+    Route::get('specs','AdminController@show_specialists')->name('adminSpecialists');
     Route::get('edit','AdminController@edit')->name('adminEdit');
     Route::get('add-specialist/','AdminController@add_spec')->name('adminAddSpec');
     Route::get('add-object/','AdminController@add_new')->name('adminAddNew');

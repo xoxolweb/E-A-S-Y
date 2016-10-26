@@ -12,7 +12,7 @@
                 <span class="first_speed"><a href="{{route('main')}}">Агентство недвижимости E-A-S-Y</a><span>&rArr;</span></span>
                 <span><a href="/{{$category}}">{{$item->category}}</a></span><span>&rArr;</span>
                 <span><a href="/{{$category}}/{{$item->type_alias}}/">{{$item->type}}</a></span><span>&rArr;</span>
-                <span><a href="/{{$category}}/{{$item->alias}}">{{$item->title}}</a></span>
+                <span><a href="/{{$category}}/{{$item->type_alias}}/{{$item->alias}}">{{$item->title}}</a></span>
             </div>
         </div>
     </div>

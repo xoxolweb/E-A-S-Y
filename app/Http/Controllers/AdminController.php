@@ -20,14 +20,29 @@ class AdminController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+
+
     public function index(){
 
+        return view('admin.panel');
+    }
+    public function show_categories(){
 
+        return view('admin.cats');
+    }
 
-       $bids = Bid::paginate(1);
-       $specs = Specialist::paginate(3);
+    public function show_objects(){
 
-       return view('admin.panel')->with(compact('bids','specs'));
+       $bids = Bid::paginate(7);
+
+       return view('admin.objects')->with(compact('bids'));
+    }
+    public function show_specialists(){
+
+       $specs = Specialist::paginate(7);
+
+       return view('admin.specialists')->with(compact('specs'));
     }
 
     public function add_new(){
@@ -63,7 +78,7 @@ class AdminController extends Controller
      */
     public function store_obj(Request $request)    {
 
-        $this->validate($request,[
+ /*       $this->validate($request,[
             'title' => 'required|unique:bids',
             'city' => 'required',
             'region' => 'required',
@@ -78,16 +93,17 @@ class AdminController extends Controller
             'description' => 'required',
             'condition' => 'required',
 
-        ]);
+        ]);*/
 
         $fs = new Filesystem();
         $alias = str_slug($request->title);
         $path = public_path()."/uploads/{$alias}/";
         $make_result = $fs->makeDirectory($path,0777,true,true);
         if($make_result) {
-            $images =  "/uploads/{$alias}/{$request->bigImage->getClientOriginalName()}";
-            $request->bigImage->move($path, $request->bigImage->getClientOriginalName());
-
+            foreach ($request->images as $tmp){
+                $images[] = "/uploads/{$alias}/{$tmp->getClientOriginalName()}";
+                $tmp->move($path, $tmp->getClientOriginalName());
+            }
         }else{
             $images = null;
         }
@@ -99,7 +115,8 @@ class AdminController extends Controller
         $bid->autor = 'admin';
         $bid->alias = $alias;
         $bid->images = json_encode($images);
-        $bid->save();
+
+        //$bid->save();
 
 
         return redirect()->route('adminAddNew')->with('message','saved');

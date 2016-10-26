@@ -3,16 +3,23 @@
 @section('content')
 
 <style>
-    label{
+    label,textarea{
         display: block;
         width:100% !important;
     }
     select{
         width:100% !important
     }
+    button{
+        margin-top:5px;
+    }
+    img{
+
+        padding:2px;
+    }
 </style>
 
-<form action="{{route('adminStoreObj')}}" method="post" enctype="multipart/form-data" class="container">
+<form action="{{route('adminStoreObj')}}" method="post" enctype="multipart/form-data">
         <div class="row">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -31,48 +38,45 @@
                     </ul>
                 </div>
             @endif
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="title">Заголовок</label> <input   id="title" type="text" name="title">
                 <label for="city">Город</label> <input id="city" type="text" name="city">
                 <label for="region">Расположение</label> <input   id="region" type="text" name="region">
-                <label for="type">Специалист</label>
-                <select id="spec" name="spec">
-                    @foreach($list as $spec)
-                    <option value="{{$spec->id}}">{{$spec->name}}</option>
-                    @endforeach
-                </select>
-            </div>
-            <div class="col-md-4">
-                <label for="type">Тип недвижимости</label>
-                    <select id="type" name="type">
-                        <option>Купить</option>
-                        <option>Продать</option>
-                        <option>Арендовать</option>
-                        <option>Сдать в Аренду</option>
-                    </select>
-                <label for="category">Категория</label>
-                    <select id="category" name="category">
-                        <option>Квартиры</option>
-                        <option>Дома</option>
-                        <option>Земельные участки</option>
-                        <option>Оффисы</option>
-                    </select>
-                <label for="condition">Состояние</label>
-                    <select id="condition" name="condition">
-                        <option>Отличное</option>
-                        <option>Хорошее</option>
-                        <option>Нормальное</option>
-                        <option>Плохое</option>
-                    </select>
                 <label for="price">Цена</label> <input   id="price" type="text" name="price">
                 <label for="area">Площадь</label> <input   id="area" type="text" name="area">
                 <label for="room_number">Количество комнат</label> <input   id="room_number" type="text" name="room_number">
                 <label for="sleep_places">Количество спальных мест</label> <input   id="sleep_places" type="text" name="sleep_places">
                 <label for="bath_places">Количество ванных</label> <input   id="bath_places" type="text" name="bath_places">
-                <label for="images">Фото</label> <input   id="images" type="file" name="bigImage"  accept="image/*">
-                {{--<label for="images">Upload Photos (380*246)</label> <input   id="images" type="file" name="images" multiple accept="image/*">--}}
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
+                <label for="type">Специалист</label>
+                <select id="spec" name="spec">
+                    @foreach($list as $spec)
+                        <option value="{{$spec->id}}">{{$spec->name}}</option>
+                    @endforeach
+                </select>
+                <label for="type">Тип недвижимости</label>
+                <select id="type" name="type">
+                    <option>Купить</option>
+                    <option>Продать</option>
+                    <option>Арендовать</option>
+                    <option>Сдать в Аренду</option>
+                </select>
+                <label for="category">Категория</label>
+                <select id="category" name="category">
+                    <option>Квартиры</option>
+                    <option>Дома</option>
+                    <option>Земельные участки</option>
+                    <option>Оффисы</option>
+                </select>
+                <label for="condition">Состояние</label>
+                <select id="condition" name="condition">
+                    <option>Отличное</option>
+                    <option>Хорошее</option>
+                    <option>Нормальное</option>
+                    <option>Плохое</option>
+                </select>
+                <hr>
                 <label for="description">Описание</label>
                 <textarea rows="5"  cols="40" id="description" name="description"></textarea>
                 <hr>
@@ -81,11 +85,15 @@
                 <hr>
                 <label for="keywords">Keywords</label>
                 <input type="text" id="keywords" name="keywords">
+                </div>
+            <div class="col-md-5">
+                <label for="images">Фото</label>
+                  <input id="images" type="file" name="images[]" multiple accept="image/*" class="btn btn-default">
+                    <div class="row" id="imageBox"></div>
             </div>
             {{csrf_field()}}
         </div>
      <button id="send" type = "submit" class="btn btn-primary">Сохранить</button>
-
  </form>
 
 

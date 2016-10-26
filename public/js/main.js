@@ -25,12 +25,12 @@ setSlidElem(arrElem);
 $('.context_about h1').on('click', function(){
   $('.body_about').slideToggle();
   $(this).parent().toggleClass('active_about')
-})
+});
 
 
 $('.accordion>div h5').on('click',function(){
   $(this).parent().toggleClass('onchoice')
-})
+});
 
 
 $('.slick-slider .slick-next').text('>');
@@ -38,6 +38,7 @@ $('.slick-slider .slick-prev').text('<');
 
 // heddin's art
 
+//site
 
 function filter_main() {
 
@@ -137,30 +138,62 @@ function filter_category(){
 
 }
 
-function _main(){
+// adnmin's part
+
+function photo_prewiew() {
+
+    var input = $('#images')[0];
+
+    for (let i = 0; i<input.files.length; i++){
+
+          if (input.files && input.files[i]) {
+
+             var reader = new FileReader();
+
+             reader.onload = function (e) {
+
+             let cur_image = $('<img>').attr('id','ph'+i).attr('src', e.target.result);
+                  cur_image.addClass('col-md-3 thumbnail');
+                  cur_image.click((e)=>{
+                      let target = $('#'+e.target.id);
+                    (target.hasClass('col-md-3'))
+                        ? target.removeClass('col-md-3').addClass('col-md-12')
+                        : target.removeClass('col-md-12').addClass('col-md-3');
+
+                  });
+                  cur_image.appendTo($('#imageBox'));
+             };
+
+             reader.readAsDataURL(input.files[i]);
+          }
+
+    }
+  console.log($('#imageBox').children());
+}
+function swap_imgs(e){
+
+  let target_id = e.target.id;
+    let target =  $('#'+target_id);
+    let big = $('.big');
+    let tmp_src = target.attr('src');
+
+    target.attr('src',big.attr('src'))
+    big.attr('src',tmp_src);
+}
+
+// main function
+function _main() {
 
 
   var btn_give_rent = $('#btn_g_rent');
   var btn_search = $('#search');
-  var btn_objs = $('#objs');
-  var btn_specs = $('#specs');
+  var input_photos = $('#images');
 
-
-  btn_objs.click(
-    function(){
-       $('.objs').collapse('toggle');
-
-    }
-  );
-  btn_specs.click(
-    function(){
-
-      $('.specs').collapse('toggle');
-
-    }
-  );
   btn_search.click(filter_category);
   btn_give_rent.click(filter_main);
+
+  input_photos.change(photo_prewiew);
+
 
 
 }
