@@ -13,7 +13,7 @@
 
 
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Route;
 
 
 Auth::routes();
@@ -36,12 +36,20 @@ Route::group(['prefix'=>'admin'],function(){
 Route::get('{category}','IndexController@category');*/
 
 Route::group(['prefix'=>'rent'],function(){
+    Route::get('houses','RentController@show_houses');
+    Route::get('flats','RentController@show_flats');
+    Route::get('offices','RentController@show_offices');
+    Route::get('lands','RentController@show_lands');
     Route::get('/','RentController@index');
 });
 Route::group(['prefix'=>'buy'],function(){
+    Route::get('houses','BuyController@show_houses');
+    Route::get('flats','BuyController@show_flats');
+    Route::get('offices','BuyController@show_offices');
+    Route::get('lands','BuyController@show_lands');
     Route::get('/','BuyController@index');
 });
-
+Route::get('{category}/{type}/{alias}','IndexController@detail');
 
 Route::post('/filter','IndexController@filter')->name('filter');
 

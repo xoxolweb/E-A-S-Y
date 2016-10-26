@@ -29,25 +29,44 @@
     <section class="body_block_category">
         <section class="category_bl">
             <div class="contain">
-                <div class="home_bl">
-                    <a href="/houses" class="body_category">
-                        <h2>Дома</h2>
-                    </a>
+                @if($category == 'rent')
+                        <div class="home_bl">
+                            <a href="{{$category}}/houses" class="body_category">
+                                <h2>Дома</h2>
+                            </a>
 
-                </div>
-                <div class="apartments_bl">
-                    <a href="/flats" class="body_category">
-                        <h2>Квартиры</h2>
-                    </a>
+                        </div>
+                        <div class="apartments_bl">
+                            <a href="{{$category}}/flats" class="body_category">
+                                <h2>Квартиры</h2>
+                            </a>
 
-                </div>
-                <div class="offices_bl">
-                    <a href="/offices" class="body_category">
-                        <h2>Офисы</h2>
-                    </a>
+                        </div>
+                        <div class="offices_bl">
+                            <a href="{{$category}}/offices" class="body_category">
+                                <h2>Офисы</h2>
+                            </a>
+                        </div>
+                @endif
+                @if($category == 'buy')
+                        <div class="home_bl">
+                            <a href="{{$category}}/houses" class="body_category">
+                                <h2>Дома</h2>
+                            </a>
 
+                        </div>
+                        <div class="apartments_bl">
+                            <a href="{{$category}}/flats" class="body_category">
+                                <h2>Квартиры</h2>
+                            </a>
 
-                </div>
+                        </div>
+                        <div class="offices_bl">
+                            <a href="{{$category}}/offices" class="body_category">
+                                <h2>Офисы</h2>
+                            </a>
+                        </div>
+                @endif
             </div>
         </section>
         <div class="contain">
